@@ -40,28 +40,26 @@
 							<li><a href="signin.html" class="round red">Sign Up<span class="round">Hello</span></a></li>
 						</ul>
 					</div>
-					<div class="jquery-script-center">
-						<h1>Dynamic Codi</h1>	
+                    <div class="title">
+						<h1>Dynamic Codi</h1>
+                    </div>
+                    <div class="jquery-script-center">
 						<nav class="codrops-demos">
 							<a href="daily_codi.html">Daily Codi</a>
-							<!-- toggle search -->
-                            <a href="#">Search</a>
-                            <a href="#">My Codi Book</a>
+                            <!-- toggle search -->
+                            <a class="searchlink" id="searchlink">Search
+                                <div class="searchform">
+                                    <form id="search">
+                                        <input type="text" class="s" id="s" placeholder="Keyword Search">
+                                        <button type="submit" class="sbtn"></button>
+                                    </form>
+                                </div>
+                            </a>
+                            <a href="my_codi_book.html">My Codi Book</a>
                         </nav>
                     </div>
-                    <!-- toggle search -->
-                    <div class="searchlink" id="searchlink">
-                        <!-- <i class="fa fa-search"></i> -->
-                        <i class="fa"></i>
-                        <div class="searchform">
-                            <form id="search">
-                                <input type="text" class="s" id="s" placeholder="keyword Search">
-                                <button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-				</div>
-			</header>
+                </div>
+            </header>
 
 			<!-- product detail -->
 			<div class="product_detail">	<!-- need to change class name -->
@@ -89,7 +87,7 @@
 				</div>
 				<div>
 					<p><h1>KEYWORDS</h1></p>
-					<a href="#"><img src="images/sample_wordcloud.png" width="960px" height="300px"></a>
+					<img src="images/sample_word_cloud.png">
 				</div>
 				<div class="product_detail-blog_review">
 					<p><h1>BLOG REVIEW</h1></p>
