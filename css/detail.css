@@ -6,3 +6,26 @@
 .codi_detail ul {
 	float: right;
 }
+
+.product_detail {
+	max-width: 60em; /* 960 px */
+	margin: 0 auto;
+}
+
+.product_detail ul {
+	float: right;
+}
+
+.product_detail-related_product img {
+    display: inline;
+    margin: 3px;
+	height: 180px;
+    width: 180px;
+}
+
+.product_detail-blog_review img {
+    margin: 10px;
+	height: 150px;
+    width: 150px;
+}
+
