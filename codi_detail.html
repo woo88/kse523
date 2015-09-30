@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>KSE523 | Main page</title>
+		<meta name="description" content="Loading Effects for Grid Items with CSS Animations" />
+		<meta name="keywords" content="css animation, loading effect, google plus, grid items, masonry" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/jqueryscripttop.css" />
+        <!-- login button CSS -->
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+        <!-- toggle search CSS -->
+        <link rel="stylesheet" type="text/css" href="css/toggle-search.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+        <!-- codi detail CSS -->
+        <link rel="stylesheet" type="text/css" href="css/detail.css" />
+        <!-- jQuery JS -->
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <!-- grid layout JS -->
+        <script src="js/modernizr.custom.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/imagesloaded.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/AnimOnScroll.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+			<header>
+				<div id="jquery-script-menu">
+					<!-- Login and Sign Up -->
+					<div class="login">
+						<ul>
+							<li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
+							<li><a href="signin.html" class="round red">Sign Up<span class="round">Hello</span></a></li>
+						</ul>
+					</div>
+					<div class="jquery-script-center">
+						<h1>Dynamic Codi</h1>	
+						<nav class="codrops-demos">
+							<a href="#">Daily Codi</a>
+							<!-- toggle search -->
+                            <a href="#">Search</a>
+                            <a href="#">My Codi Book</a>
+                        </nav>
+                    </div>
+                    <!-- toggle search -->
+                    <div class="searchlink" id="searchlink">
+                        <!-- <i class="fa fa-search"></i> -->
+                        <i class="fa"></i>
+                        <div class="searchform">
+                            <form id="search">
+                                <input type="text" class="s" id="s" placeholder="keyword Search">
+                                <button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+			</header>
+
+			<!-- codi detail -->
+			<div class="codi_detail">
+					<ul>
+						<li>SWEATSHIRT: 73,000</li>
+						<li>CAP: 38,000</li>
+						<li>PANTS: 55,000</li>
+						<li>BAG: 31,500</li>
+						<li>SNEAKER: 26,950</li>
+					</ul>
+				<img src="images/sample_codi.png" width="700px">
+				<p><br><br><br></p>
+				<p><h1>RELATED ITEM</h1></p>
+			</div>
+
+			<!-- Grid Layer -->
+			<ul class="grid effect-3" id="grid">
+				<li><a href="#"><img src="images/sample_sweatshirt.jpg"><p>SWEATSHIRT</p></a><p>Description</p></li>
+				<li><a href="#"><img src="images/sample_cap.jpg"><p>CAP</p></a><p>Description</p></li>
+				<li><a href="#"><img src="images/sample_pants.jpg"><p>PANTS</p></a><p>Description</p></li>
+				<li><a href="#"><img src="images/sample_bag.jpg"><p>BAG</p></a><p>Description</p></li>
+				<li><a href="#"><img src="images/sample_sneaker.jpg"><p>SNEAKER</p></a><p>Description</p></li>
+			</ul>
+		</div>
+
+        <!-- grid layout -->
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+
+        <!-- toggle search -->
+        <script type="text/javascript">
+            $(function() {
+            var $searchlink = $('#searchlink');
+
+            /*// hover effect
+            $searchlink.on('mouseover', function(){
+              $(this).addClass('open');
+            }).on('mouseout', function(){
+              $(this).removeClass('open');
+            });*/
+
+            // on click effect
+            $searchlink.on('click', function(e){
+              var target = e ? e.target : window.event.srcElement;
+              
+              if($(target).attr('id') == 'searchlink') {
+                if($(this).hasClass('open')) {
+                  $(this).removeClass('open');
+                } else {
+                  $(this).addClass('open');
+                }
+              }
+            });
+            });
+        </script>
+	</body>
+</html>

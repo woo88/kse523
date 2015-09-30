@@ -1,0 +1,8 @@
+.codi_detail {
+	max-width: 60em; /* 960 px */
+	margin: 0 auto;
+}
+
+.codi_detail ul {
+	float: right;
+}
