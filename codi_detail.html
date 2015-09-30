@@ -65,6 +65,7 @@
 
 			<!-- codi detail -->
 			<div class="codi_detail">
+				<!-- codi information (price) -->
 				<ul>
 					<li>SWEATSHIRT: 73,000</li>
 					<li>CAP: 38,000</li>
@@ -72,6 +73,7 @@
 					<li>BAG: 31,500</li>
 					<li>SNEAKER: 26,950</li>
 				</ul>
+				<!-- codi image -->
 				<img src="images/sample_codi.png" width="550px">
 			</div>
 
@@ -99,27 +101,27 @@
         <!-- toggle search -->
         <script type="text/javascript">
             $(function() {
-            var $searchlink = $('#searchlink');
+                var $searchlink = $('#searchlink');
 
-            /*// hover effect
-            $searchlink.on('mouseover', function(){
-              $(this).addClass('open');
-            }).on('mouseout', function(){
-              $(this).removeClass('open');
-            });*/
-
-            // on click effect
-            $searchlink.on('click', function(e){
-              var target = e ? e.target : window.event.srcElement;
-              
-              if($(target).attr('id') == 'searchlink') {
-                if($(this).hasClass('open')) {
-                  $(this).removeClass('open');
-                } else {
+                /*// hover effect
+                $searchlink.on('mouseover', function(){
                   $(this).addClass('open');
-                }
-              }
-            });
+                }).on('mouseout', function(){
+                  $(this).removeClass('open');
+                });*/
+
+                // on click effect
+                $searchlink.on('click', function(e){
+                    var target = e ? e.target : window.event.srcElement;
+                  
+                    if($(target).attr('id') == 'searchlink') {
+                        if($(this).hasClass('open')) {
+                            $(this).removeClass('open');
+                        } else {
+                            $(this).addClass('open');
+                        }
+                    }
+                });
             });
         </script>
 	</body>

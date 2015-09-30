@@ -43,24 +43,27 @@
 						<nav class="codrops-demos">
 							<a href="daily_codi.html">Daily Codi</a>
 							<!-- toggle search -->
-                            <a href="#">Search</a>
+                            <a class="searchlink" id="searchlink">Search</a>
                             <a href="my_codi_book.html">My Codi Book</a>
                         </nav>
                     </div>
-                    <!-- toggle search -->
-                    <div class="searchlink" id="searchlink">
-                        <!-- <i class="fa fa-search"></i> -->
-                        <i class="fa"></i>
-                        <div class="searchform">
-                            <form id="search">
-                                <input type="text" class="s" id="s" placeholder="keyword Search">
-                                <button type="submit" class="sbtn"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-				</div>
-			</header>
+                </div>
+            </header>
 
+            <!-- toggle search -->
+            <div>
+                <div class="searchform">
+                    <form id="search">
+                        <input type="text" class="s" id="s" placeholder="keyword Search">
+                        <button type="submit" class="sbtn"></button>
+                    </form>
+                </div>
+            </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 			<!-- Grid Layer -->
 			<ul class="grid effect-3" id="grid">
 				<li><a href="codi_detail.html"><img src="images/sample_codi.png"><p>Title</p></a><p>Description</p></li>
@@ -125,27 +128,27 @@
         <!-- toggle search -->
         <script type="text/javascript">
             $(function() {
-            var $searchlink = $('#searchlink');
+                var $searchlink = $('#searchlink');
 
-            /*// hover effect
-            $searchlink.on('mouseover', function(){
-              $(this).addClass('open');
-            }).on('mouseout', function(){
-              $(this).removeClass('open');
-            });*/
-
-            // on click effect
-            $searchlink.on('click', function(e){
-              var target = e ? e.target : window.event.srcElement;
-              
-              if($(target).attr('id') == 'searchlink') {
-                if($(this).hasClass('open')) {
-                  $(this).removeClass('open');
-                } else {
+                /*// hover effect
+                $searchlink.on('mouseover', function(){
                   $(this).addClass('open');
-                }
-              }
-            });
+                }).on('mouseout', function(){
+                  $(this).removeClass('open');
+                });*/
+
+                // on click effect
+                $searchlink.on('click', function(e){
+                    var target = e ? e.target : window.event.srcElement;
+                  
+                    if($(target).attr('id') == 'searchlink') {
+                        if($(this).hasClass('open')) {
+                            $(this).removeClass('open');
+                        } else {
+                            $(this).addClass('open');
+                        }
+                    }
+                });
             });
         </script>
 	</body>
