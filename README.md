@@ -1,6 +1,6 @@
 # kse523
 ## Term Project
-1. Main page: masonry.html
+1. Main page: daily_codi.html
 2. codi detail page: codi_detail.html
 3. item detail page: ??codi_detail.html??
 4. Search result page: search.html
