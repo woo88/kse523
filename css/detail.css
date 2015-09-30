@@ -1,6 +1,7 @@
 .codi_detail {
-	max-width: 60em; /* 960 px */
-	margin: 0 auto;
+	max-width: 50em;
+	margin: 30px auto;
+	margin-bottom: 60px;
 }
 
 .codi_detail ul {
