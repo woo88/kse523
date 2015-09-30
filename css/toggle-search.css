@@ -1,0 +1,66 @@
+.searchlink {
+  display: block;
+  float: right;
+  position: relative;
+  padding: 0 40px;
+  right: 0;
+  font-size: 2.4em;
+  cursor: pointer;
+  height: 70px;
+  line-height: 65px;
+}
+.searchlink:hover, .searchlink.open {
+  color: #bababa;
+  background: #3a3a3a;
+}
+
+.searchlink.open > .searchform {
+  display: block;
+}
+
+
+/** search field **/
+.searchform {
+  display: none;
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  line-height: 40px;
+  top: 70px;
+  right: 0;
+  padding: 0 15px;
+  cursor: default;
+  background: #3a3a3a;
+}
+
+.searchlink.open .searchform {
+  display: block;
+}
+
+#search {
+  display: block;
+  position: relative;
+}
+
+#s {
+  width: 270px;
+  background: #272727;
+  padding: 8px 11px;
+  border: 0;
+  color: #eee;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+
+.sbtn {
+  display: block;
+  position: absolute;
+  right: 5px;
+  top: 13px;
+  background: none;
+  border: none;
+  color: #bcbcbc;
+  font-size: 0.6em;
+  cursor: pointer;
+}
