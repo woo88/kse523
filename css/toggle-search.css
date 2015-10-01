@@ -5,8 +5,9 @@
   cursor: pointer;
 }
 .searchlink.open {
-  color: #bababa;
-  background: #3a3a3a;
+  color: #ffffff;
+  background-color: rgba(1,151,171,1);
+  border-color: rgba(0,63,71,.2);
 }
 
 .searchlink.open > .searchform {
@@ -21,11 +22,11 @@
   width: 400px;
   height: 50px;
   line-height: 40px;
-  top: 70px;
-  left: 0;
+  top: 85px;
+  left: -200px;
   padding: 0 15px;
   cursor: default;
-  background: #3a3a3a;
+  
 }
 
 .searchlink.open .searchform {
@@ -38,14 +39,16 @@
 }
 
 #s {
-  width: 370px;
-  background: #272727;
+  width: 470px;
+  height: 50px;
+  background-color: rgba(1,151,171,1);
   padding: 8px 11px;
   border: 0;
-  color: #eee;
+  color: #fff;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
+  font-size: 2em;
 }
 
 .sbtn {
@@ -58,4 +61,20 @@
   color: #bcbcbc;
   font-size: 0.6em;
   cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
 }
