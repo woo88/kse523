@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="stringType">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<xs:simpleType name="integerType">
+  <xs:restriction base="xs:integer"/>
+</xs:simpleType>
+
+<xs:simpleType name="fashionIdType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9]{6}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="userIdType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9]{6}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="itemIdType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9]{6}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="imageType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="(.)+\.(gif|jpg|jpeg|bmp)"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="itemsType">
+  <xs:sequence>
+    <xs:element name="itemId" minOccurs="0" maxOccurs="unbounded" type="itemIdType"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="fashionbookType">
+  <xs:sequence>
+    <xs:element name="title" type="stringType"/>
+    <xs:element name="image" type="imageType"/>
+    <xs:element name="userId" type="userIdType"/>
+    <xs:element name="items" type="itemsType"/>
+    <xs:element name="likes" type="integerType"/>
+  </xs:sequence>
+  <xs:attribute name="fashionId" type="fashionIdType" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="fashionbooksType">
+  <xs:sequence>
+    <xs:element name="fashionbook" minOccurs="0" maxOccurs="unbounded" type="fashionbookType"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="fashionbooks" type="fashionbooksType"/>
+
+</xs:schema>

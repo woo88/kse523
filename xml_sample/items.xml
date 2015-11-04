@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+  <item itemId="000001">
+    <title>Dr. Martens Flora Chelsea Boot</title>
+    <link>http://shopping.naver.com/detail/detail.nhn?nv_mid=6713790283</link>
+    <image>http://shopping.phinf.naver.net/main_8959348/8959348852.jpg</image>
+    <lprice>583890</lprice>
+    <hprice>1256370</hprice>
+    <mallName>Naver</mallName>
+    <productId>6713790283</productId>
+    <productType>1</productType>
+    <reviews>
+    	<reviewId>000100</reviewId>
+    	<reviewId>000145</reviewId>
+    </reviews>
+    <likes>88</likes>
+  </item>
+  <item itemId="000002">
+    <title>NEIL F/W NEOPREME BLOUSON (2 COLOR)</title>
+    <link>http://shopping.naver.com/detail/detail.nhn?nv_mid=8218826358</link>
+    <image>http://shopping.phinf.naver.net/main_8019229/8019229047.1.jpg</image>
+    <lprice>683890</lprice>
+    <hprice>1756370</hprice>
+    <mallName>Naver</mallName>
+    <productId>8218826358</productId>
+    <productType>1</productType>
+    <reviews>
+    	<reviewId>000101</reviewId>
+    	<reviewId>000734</reviewId>
+    </reviews>
+    <likes>222</likes>
+  </item>
+</items>

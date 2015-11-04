@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="stringType">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<xs:simpleType name="emailType"> 
+  <xs:restriction base="xs:string"> 
+    <xs:pattern value="[^@]+@[^\.]+\..+"/> 
+  </xs:restriction> 
+</xs:simpleType> 
+
+<xs:simpleType name="userIdType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9]{6}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="userType">
+  <xs:sequence>
+    <xs:element name="email" type="emailType"/>
+    <xs:element name="password" minOccurs="0" type="stringType"/>
+  </xs:sequence>
+  <xs:attribute name="userId" type="userIdType" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="usersType">
+  <xs:sequence>
+    <xs:element name="user" minOccurs="0" maxOccurs="unbounded" type="userType"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="users" type="usersType"/>
+
+</xs:schema>

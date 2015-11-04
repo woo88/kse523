@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user userId="000001">
+    <email>lee@kaist.ac.kr</email>
+    <password>{COQLCE6DU6GtcS5P=}</password> <!-- encoded password -->
+  </user>
+  <user userId="000002">
+    <email>woo88@kaist.ac.kr</email>
+    <password>{IDJCME9CD9dfEF==D}</password> <!-- encoded password -->
+  </user>
+  <user userId="000003">
+    <email>aviv@kaist.ac.kr</email>
+  </user>
+</users>

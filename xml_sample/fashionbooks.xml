@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fashionbooks>
+  <fashionbook fashionId="000001">
+    <title>Winter Fashion</title>
+    <image>1.jpg</image>
+    <userId>000002</userId>
+    <items>
+      <itemId>003412</itemId>
+      <itemId>000674</itemId>
+      <itemId>000867</itemId>
+    </items>
+    <likes>88</likes>
+  </fashionbook>
+  <fashionbook fashionId="000002">
+    <title>My favorite style</title>
+    <image>143.jpg</image>
+    <userId>000003</userId>
+    <items>
+      <itemId>001412</itemId>
+      <itemId>000074</itemId>
+      <itemId>004867</itemId>
+    </items>
+    <likes>2</likes>
+  </fashionbook>
+  <fashionbook fashionId="000003">
+    <title>Black Style</title>
+    <image>673.jpg</image>
+    <userId>000001</userId>
+    <items>
+      <itemId>000035</itemId>
+      <itemId>000632</itemId>
+      <itemId>002534</itemId>
+    </items>
+    <likes>22</likes>
+  </fashionbook>
+</fashionbooks>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="stringType">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<xs:simpleType name="linkType">
+  <xs:restriction base="xs:anyURI"/>
+</xs:simpleType>
+
+<xs:simpleType name="reviewIdType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[0-9]{6}"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="reviewType">
+  <xs:sequence>
+    <xs:element name="title" type="stringType"/>
+    <xs:element name="link" type="linkType"/>
+    <xs:element name="description" type="stringType"/>
+    <xs:element name="bloggername" type="stringType"/>
+    <xs:element name="bloggerlink" type="linkType"/>
+  </xs:sequence>
+  <xs:attribute name="reviewId" type="reviewIdType" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="reviewsType">
+  <xs:sequence>
+    <xs:element name="review" minOccurs="0" maxOccurs="unbounded" type="reviewType"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="reviews" type="reviewsType"/>
+
+</xs:schema>
