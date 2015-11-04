@@ -1,0 +1,13 @@
+W3C XML Schema (XSD) Validation online (http://www.utilities-online.info/xsdvalidation/)
+
+- Vaildate fashionbooks.xml against fasionbooks.xsd
+Url: http://www.utilities-online.info/xsdvalidation/?save=9911e09a-62a7-4eb4-931e-606cc737e289-xsdvalidation
+
+- Vaildate items.xml against items.xsd
+Url: http://www.utilities-online.info/xsdvalidation/?save=09cb52ed-9319-4952-8f47-7ef35da9c97b-xsdvalidation
+
+- Vaildate reviews.xml against reviews.xsd
+Url: http://www.utilities-online.info/xsdvalidation/?save=11c50bf6-60a6-4ff8-b87e-62e64d9aef58-xsdvalidation
+
+- Vaildate users.xml against users.xsd
+Url: http://www.utilities-online.info/xsdvalidation/?save=0944bb73-323c-44a4-8cf1-54ef48588e76-xsdvalidation
