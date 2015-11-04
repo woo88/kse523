@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>KSE523 | My Fashion Book page</title>
-		<meta name="description" content="Loading Effects for Grid Items with CSS Animations" />
-		<meta name="keywords" content="css animation, loading effect, google plus, grid items, masonry" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico"> 
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/jqueryscripttop.css" />
-        <!-- login button CSS -->
-		<link rel="stylesheet" type="text/css" href="css/login.css" />
-        <!-- toggle search CSS -->
-        <link rel="stylesheet" type="text/css" href="css/toggle-search.css" />
-        <link rel="stylesheet" type="text/css" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-        <!-- my codi book CSS -->
-        <link rel="stylesheet" type="text/css" href="css/my_codi_book.css" />
-        <!-- jQuery JS -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <meta name="description" content="SNSs-based Fashion Sharing Service" />
+        <meta name="author" content="Jongseong Woo, Hyeongseok Lee" />
+        <meta name="keywords" content="fashion, clothes, shopping, SNSs, share" />
+        <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+        <title>KSE523 | My Fashion Book</title>
+        
+        <!-- Default CSS -->
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+        
+        <!-- Grid Layout CSS -->
+        <link rel="stylesheet" type="text/css" href="css/grid.css" />
+
+        <!-- My Fashion Book CSS -->
+        <link rel="stylesheet" type="text/css" href="css/my-fashion-book.css" />
+
+        <!-- jQuery for Toggle Search JS -->
         <script src="js/jquery-2.1.4.min.js"></script>
-        <!-- grid layout JS -->
+
+        <!-- Grid Layout JS -->
         <script src="js/modernizr.custom.js"></script>
         <script src="js/masonry.pkgd.min.js"></script>
         <script src="js/imagesloaded.js"></script>
         <script src="js/classie.js"></script>
         <script src="js/AnimOnScroll.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<!-- Top Navigation -->
-			<header>
-				<div id="jquery-script-menu">
-					<!-- Login and Sign Up -->
-					<div class="login">
-						<ul>
-							<li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
-							<li><a href="signin.html" class="round red">Sign Up<span class="round">Hello</span></a></li>
-						</ul>
-					</div>
-                    <div class="title">
-						<a href="daily_codi.html"><h1>Fashionbook</h1></a>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Fixed Header -->
+            <header>
+                <div id="jquery-script-menu">
+                    <!-- Login Button -->
+                    <div class="login">
+                        <ul>
+                            <li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
+                        </ul>
                     </div>
-					<div class="jquery-script-center">	
-						<nav class="codrops-demos">
-							<a href="daily_codi.html">Daily Fashion</a>
-                            <!-- toggle search -->
+
+                    <!-- Main Title -->
+                    <div class="title">
+                        <a href="fashion-book-list.html"><h1>Fashionbook</h1></a>
+                    </div>
+
+                    <!-- Top Navigation -->
+                    <div class="jquery-script-center">
+                        <nav class="codrops-demos">
+                            <a href="fashion-book-list.html">Daily Fashion</a>
+
+                            <!-- Toggle Search -->
                             <a class="searchlink" id="searchlink">Search
                                 <div class="searchform">
                                     <form id="search">
@@ -55,15 +63,16 @@
                                     </form>
                                 </div>
                             </a>
-                            <a href="my_codi_book.html">My Fashion Book</a>
+
+                            <a href="my-fashion-book.html">My Fashion Book</a>
                         </nav>
                     </div>
-				</div>
-			</header>
+                </div>
+            </header>
 
-			<!-- my codi book -->
+			<!-- My Fashion Book -->
 			<div class="my_codi_book_header">
-				<!-- edit button -->
+				<!-- Edit Button -->
 				<div class="edit_btn_container">
 					<p>
 						<a href="#" class="btn">Undo</a>
@@ -78,10 +87,12 @@
 						<a href="#" class="btn btn-blue">Save</a>
 					</p>
 				</div>
-				<!-- my codi image -->
+
+				<!-- My Fashion Book Image -->
 				<img src="images/sample_codi.png" width="550px">
 			</div>
 
+            <!-- Item List -->
 			<p><h1>ITEM LIST</h1></p>
 
 			<!-- Grid Layout -->
@@ -104,6 +115,8 @@
 			</ul>
 
 			<br><br>
+
+            <!-- My Fashion Book List -->
 			<p><h1>MY FASHION BOOK LIST</h1></p>
 
 			<!-- Grid Layout -->
@@ -119,16 +132,16 @@
 			</ul>
 		</div>
 
-        <!-- grid layout -->
-		<script>
-			new AnimOnScroll( document.getElementById( 'grid' ), {
-				minDuration : 0.4,
-				maxDuration : 0.7,
-				viewportFactor : 0.2
-			} );
-		</script>
+        <!-- Grid Layout JS -->
+        <script>
+            new AnimOnScroll( document.getElementById( 'grid' ), {
+                minDuration : 0.4,
+                maxDuration : 0.7,
+                viewportFactor : 0.2
+            } );
+        </script>
 
-        <!-- toggle search -->
+        <!-- Toggle Search JS -->
         <script type="text/javascript">
             $(function() {
                 var $searchlink = $('#searchlink');
@@ -154,5 +167,5 @@
                 });
             });
         </script>
-	</body>
+    </body>
 </html>

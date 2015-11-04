@@ -1,8 +1,8 @@
 # kse523
 ## Term Project
-1. Main page: daily_codi.html
-2. codi detail page: codi_detail.html
-3. item detail page: product_detail.html
-4. Search result page: search.html
-5. My codi. book page: my_codi_book.html
-6. Login & Sign up page: signin.html
+1. Fashion Book List Page (Main Page): fashion-book-list.html
+2. Fashion Book Page: fashion-book.html
+3. Fashion Item Page: fashion-item.html
+4. My Fashion Book Page: my-fashion-book.html
+5. Search Result Page: search.html
+6. Log in & Sign up Page: signin.html

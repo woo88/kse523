@@ -10,7 +10,6 @@
 .edit_btn_container {
 	min-height: 100px;
 	margin-top: 100px;
-	
 	text-align: center;
 	float: right;
 }
@@ -40,8 +39,7 @@ a.btn {
 		border-color: rgba(0,0,0,0.9);
 	}
 
-/* blue button */
-
+/* Blue Button */
 a.btn.btn-blue {
 	background-color: #699DB6;
 	border-color: rgba(0,0,0,0.3);
@@ -59,8 +57,7 @@ a.btn.btn-blue {
 		border-color: rgba(0,0,0,0.9);
 	}
 
-/* red button */
-
+/* Red Button */
 a.btn.btn-red {
 	background-color: #E48681;
 	border-color: rgba(0,0,0,0.3);

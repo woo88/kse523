@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>KSE523 | Item Detail page</title>
-		<meta name="description" content="Loading Effects for Grid Items with CSS Animations" />
-		<meta name="keywords" content="css animation, loading effect, google plus, grid items, masonry" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico"> 
-		<link rel="stylesheet" type="text/css" href="css/default.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/jqueryscripttop.css" />
-        <!-- login button CSS -->
-		<link rel="stylesheet" type="text/css" href="css/login.css" />
-        <!-- toggle search CSS -->
-        <link rel="stylesheet" type="text/css" href="css/toggle-search.css" />
-        <link rel="stylesheet" type="text/css" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-        <!-- codi detail CSS -->
-        <link rel="stylesheet" type="text/css" href="css/detail.css" />
-        <!-- jQuery JS -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <meta name="description" content="SNSs-based Fashion Sharing Service" />
+        <meta name="author" content="Jongseong Woo, Hyeongseok Lee" />
+        <meta name="keywords" content="fashion, clothes, shopping, SNSs, share" />
+        <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+        <title>KSE523 | Fashion Item Information</title>
+        
+        <!-- Default CSS -->
+        <link rel="stylesheet" type="text/css" href="css/default.css" />
+        
+        <!-- Grid Layout CSS -->
+
+        <!-- Fashion Item Information CSS -->
+        <link rel="stylesheet" type="text/css" href="css/information.css" />
+
+        <!-- jQuery for Toggle Search JS -->
         <script src="js/jquery-2.1.4.min.js"></script>
-        <!-- grid layout JS -->
-        <script src="js/modernizr.custom.js"></script>
-        <script src="js/masonry.pkgd.min.js"></script>
-        <script src="js/imagesloaded.js"></script>
-        <script src="js/classie.js"></script>
-        <script src="js/AnimOnScroll.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<!-- Top Navigation -->
-			<header>
-				<div id="jquery-script-menu">
-					<!-- Login and Sign Up -->
-					<div class="login">
-						<ul>
-							<li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
-							<li><a href="signin.html" class="round red">Sign Up<span class="round">Hello</span></a></li>
-						</ul>
-					</div>
-                    <div class="title">
-						<a href="daily_codi.html"><h1>Fashionbook</h1></a>
+
+        <!-- Grid Layout JS -->
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Fixed Header -->
+            <header>
+                <div id="jquery-script-menu">
+                    <!-- Login Button -->
+                    <div class="login">
+                        <ul>
+                            <li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
+                        </ul>
                     </div>
+
+                    <!-- Main Title -->
+                    <div class="title">
+                        <a href="fashion-book-list.html"><h1>Fashionbook</h1></a>
+                    </div>
+
+                    <!-- Top Navigation -->
                     <div class="jquery-script-center">
-						<nav class="codrops-demos">
-							<a href="daily_codi.html">Daily Fashion</a>
-                            <!-- toggle search -->
+                        <nav class="codrops-demos">
+                            <a href="fashion-book-list.html">Daily Fashion</a>
+
+                            <!-- Toggle Search -->
                             <a class="searchlink" id="searchlink">Search
                                 <div class="searchform">
                                     <form id="search">
@@ -55,24 +57,27 @@
                                     </form>
                                 </div>
                             </a>
-                            <a href="my_codi_book.html">My Fashion Book</a>
+
+                            <a href="my-fashion-book.html">My Fashion Book</a>
                         </nav>
                     </div>
                 </div>
             </header>
 
-			<!-- product detail -->
-			<div class="product_detail">	<!-- need to change class name -->
+			<!-- Fashion Item Information -->
+			<div class="product_detail">
 				<ul>
 					<li>Catagory Name : Musinsa</li><br>
 					<li>Product Name : SWEATSHIRT </li><br>
 					<li>Price : 73,000 (KRW)</li><br>
 					<li>Tag : Musinsa, SWEATSHIRT</li>
+
 					<div class="edit_btn_container">
 						<p>
 							<a href="#" class="btn btn-blue">Go To Buy</a>
 						</p>
 					</div>
+
 					<div>
 						<h3>Recent Blog Posting Status</h3>
 						<img src="images/samle_BlogPostingStatus.png" width="420px">
@@ -80,8 +85,11 @@
 				</ul>
 
 				<img src="images/sample_sweatshirt.jpg" width="500px" height="550px">
+
 				<p><br><br><br></p>
+
 				<div class="product_detail-related_product">
+                    <!-- Related Item -->
 					<p><h1>RELATED ITEM</h1></p>
 					<a href="#"><img src="images/sample_sweatshirt.jpg"></a>
 					<a href="#"><img src="images/sample_sweatshirt2.jpg"></a>
@@ -89,12 +97,17 @@
 					<a href="#"><img src="images/sample_sweatshirt4.jpg"></a>
 					<a href="#"><img src="images/sample_sweatshirt5.jpg"></a>
 				</div>
+
 				<div>
+                    <!-- Word Cloud -->
 					<p><h1>KEYWORDS</h1></p>
 					<img src="images/sample_word_cloud.png">
 				</div>
+
+                <!-- Blog Review -->
 				<div class="product_detail-blog_review">
 					<p><h1>BLOG REVIEW</h1></p>
+
 					<table bgcolor="#d3d3d3" align="left">
 						<tr width="200px" height="200px">
 							<td><img src="images/sample_blogreview1.jpeg"></td>
@@ -126,40 +139,33 @@
 			</div>
 		</div>
 
-        <!-- grid layout -->
-		<script>
-			new AnimOnScroll( document.getElementById( 'grid' ), {
-				minDuration : 0.4,
-				maxDuration : 0.7,
-				viewportFactor : 0.2
-			} );
-		</script>
+        <!-- Grid Layout JS -->
 
-        <!-- toggle search -->
+        <!-- Toggle Search JS -->
         <script type="text/javascript">
             $(function() {
-            var $searchlink = $('#searchlink');
+                var $searchlink = $('#searchlink');
 
-            /*// hover effect
-            $searchlink.on('mouseover', function(){
-              $(this).addClass('open');
-            }).on('mouseout', function(){
-              $(this).removeClass('open');
-            });*/
-
-            // on click effect
-            $searchlink.on('click', function(e){
-              var target = e ? e.target : window.event.srcElement;
-              
-              if($(target).attr('id') == 'searchlink') {
-                if($(this).hasClass('open')) {
-                  $(this).removeClass('open');
-                } else {
+                /*// hover effect
+                $searchlink.on('mouseover', function(){
                   $(this).addClass('open');
-                }
-              }
-            });
+                }).on('mouseout', function(){
+                  $(this).removeClass('open');
+                });*/
+
+                // on click effect
+                $searchlink.on('click', function(e){
+                    var target = e ? e.target : window.event.srcElement;
+                  
+                    if($(target).attr('id') == 'searchlink') {
+                        if($(this).hasClass('open')) {
+                            $(this).removeClass('open');
+                        } else {
+                            $(this).addClass('open');
+                        }
+                    }
+                });
             });
         </script>
-	</body>
+    </body>
 </html>
