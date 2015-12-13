@@ -208,13 +208,13 @@
       if( AJAX_req.readyState == 4 && AJAX_req.status == 200 ) {
         var response = JSON.parse( AJAX_req.responseText );
         // document.write( response.name );
-        document.getElementById('after').innerHTML = "Hello, after";
+        document.getElementById('after').innerHTML = response.name;
       }
     }
     AJAX_req.send();
   }
 
-  AJAX_JSON_Req( 'http://143.248.106.54:13000/data/test2.json' );
+  AJAX_JSON_Req( 'data/test2.json' );
 </script>
 </body>
 </html>
