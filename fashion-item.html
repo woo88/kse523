@@ -24,12 +24,10 @@
   <script src="js/jquery-2.1.4.min.js"></script>
 
   <!-- Grid Layout JS -->
-</head> 
-
-<body>
+  
   <!-- Read URL GET parameters -->
   <script type="text/javascript">
-  function $_GET(param) {
+  function $_GETURL(param) {
     var vars = {};
     window.location.href.replace( 
       /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
@@ -44,12 +42,17 @@
     return vars;
   }
   </script>
-  
-  <script type="text/javascript">
-  var $_GET = $_GET();
-  var item_id = $_GET['id'];
+</head> 
 
-  document.getElementById('test').innerHTML = '<b>test test</b>';
+<body onload="getParam()">
+
+  <script type="text/javascript">
+  function getParam() {
+    var $_GETURL = $_GETURL();
+    var item_id = $_GETURL['id'];
+
+    document.getElementById('test').innerHTML = '<b>test test</b>';
+  }
   </script>
 
   <div class="container">
