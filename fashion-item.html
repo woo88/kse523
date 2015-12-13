@@ -24,24 +24,6 @@
   <script src="js/jquery-2.1.4.min.js"></script>
 
   <!-- Grid Layout JS -->
-  
-  <!-- Read URL GET parameters -->
-  <script type="text/javascript">
-  function $_GETURL(param) {
-    var vars = {};
-    window.location.href.replace( 
-      /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-      function( m, key, value ) { // callback
-        vars[key] = value !== undefined ? value : '';
-      }
-    );
-
-    if ( param ) {
-      return vars[param] ? vars[param] : null;  
-    }
-    return vars;
-  }
-  </script>
 </head> 
 
 <body onload="getParam()">
@@ -188,8 +170,29 @@
     });
   </script>
 
+  <!-- Read URL GET parameters -->
+  <script type="text/javascript">
+  function $_GETURL(param) {
+    var vars = {};
+    window.location.href.replace( 
+      /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+      function( m, key, value ) { // callback
+        vars[key] = value !== undefined ? value : '';
+      }
+    );
+
+    if ( param ) {
+      return vars[param] ? vars[param] : null;  
+    }
+    return vars;
+  }
+  </script>
+
   <script type="text/javascript">
   function getParam() {
+    var $_GETURL = $_GETURL();
+    var item_id = $_GETURL['id'];
+
     document.getElementById('test').innerHTML = '<b>test test</b>';
   }
   </script>
