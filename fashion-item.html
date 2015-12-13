@@ -207,8 +207,8 @@
     AJAX_req.onreadystatechange = function() {
       if( AJAX_req.readyState == 4 && AJAX_req.status == 200 ) {
         var response = JSON.parse( AJAX_req.responseText );
-        document.write( response.name );
-        // document.getElementById('after').innerHTML = "Hello, after";
+        // document.write( response.name );
+        document.getElementById('after').innerHTML = "Hello, after";
       }
     }
     AJAX_req.send();
