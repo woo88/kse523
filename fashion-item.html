@@ -195,7 +195,7 @@
   }
   </script>
 
-  <!-- jQuery parseJSON -->
+  <!-- Load JSON file -->
   <script>
   function loadJSON(callback) {   
 
@@ -213,11 +213,18 @@
 
   init();
   function init() {
-    document.getElementById('before').innerHTML = "Hello, before!";
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
-      document.getElementById('after').innerHTML = actual_JSON[1].name;
+      document.getElementById('before').innerHTML = actual_JSON;
+      
+      var out = "";
+      var i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        out += '<a href="' + actual_JSON[i].url + '">' + 
+        actual_JSON[i].display + '</a><br>';
+      }
+      document.getElementById("after").innerHTML = out;
     });
   }
 </script>
