@@ -29,6 +29,23 @@
 <body>
   <!-- Read URL GET parameters -->
   <script type="text/javascript">
+  function $_GET(param) {
+    var vars = {};
+    window.location.href.replace( 
+      /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+      function( m, key, value ) { // callback
+        vars[key] = value !== undefined ? value : '';
+      }
+    );
+
+    if ( param ) {
+      return vars[param] ? vars[param] : null;  
+    }
+    return vars;
+  }
+  </script>
+  
+  <script type="text/javascript">
   var $_GET = $_GET();
   var item_id = $_GET['id'];
 
@@ -75,7 +92,7 @@
     <!-- Fashion Item Information -->
     <div class="product_detail">
       <ul>
-        <li>Catagory Name : Musinsa Test<?=$item_id?></li><br>
+        <li>Catagory Name : Musinsa</li><br>
         <li>Product Name : SWEATSHIRT </li><br>
         <li>Price : 73,000 (KRW)</li><br>
         <li>Tag : Musinsa, SWEATSHIRT</li>
@@ -176,23 +193,6 @@
         }
       });
     });
-  </script>
-
-  <script type="text/javascript">
-  function $_GET(param) {
-    var vars = {};
-    window.location.href.replace( 
-      /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-      function( m, key, value ) { // callback
-        vars[key] = value !== undefined ? value : '';
-      }
-    );
-
-    if ( param ) {
-      return vars[param] ? vars[param] : null;  
-    }
-    return vars;
-  }
   </script>
 </body>
 </html>
