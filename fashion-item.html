@@ -196,10 +196,35 @@
   </script>
 
   <!-- jQuery parseJSON -->
-  <script type="text/javascript">
-  var obj = JSON.parse(data/test.json);
-  document.getElementById("after").innerHTML = 
-  obj[0].title + " " + obj[0].link;
-  </script>
+  <script>
+  function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/test.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
+          }
+    };
+    xobj.send(null);
+  }
+
+  init()
+  function init() {
+    loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+
+      var out = "";
+      var i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        out += '<a href="' + actual_JSON[i].url + '">' + actual_JSON[i].display + '</a><br>';
+      }
+      document.getElementById("after").innerHTML = out;
+    });
+  }
+</script>
 </body>
 </html>
