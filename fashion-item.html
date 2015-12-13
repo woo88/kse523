@@ -220,7 +220,7 @@
       var out = "";
       var i;
       for(i = 0; i < actual_JSON.length; i++) {
-        out += '<a href="' + actual_JSON[i].url + '">' + actual_JSON[i].display + '</a><br>';
+        out += '<a href="' + actual_JSON[i].link + '">' + actual_JSON[i].title + '</a><br>';
       }
       document.getElementById("after").innerHTML = out;
     });
