@@ -138,6 +138,8 @@
       </div>
 
       <p id="test">이것은 테스트</p>
+      <p id="before"></p>
+      <p id="after"></p>
     </div>
   </div>
 
@@ -187,10 +189,32 @@
 
   <script type="text/javascript">
   function getParam() {
-    var item_id = getParameter('id');
+    var item_id = getParameter('id'); // 9074178114
 
     document.getElementById('test').innerHTML = item_id;
   }
+  </script>
+
+  <!-- jQuery parseJSON -->
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+      $.ajax({
+        type:"GET",
+        url:"data/test.json",
+        success:function(json) {
+          var list = $.parseJSON(json);
+          var listLen = list.length;
+          var contentStr = "";
+          for(var i=0; i<listLen; i++) {
+            contentStr += "[기호"+ list[i].title+"] "+ list[i].link + "후보(" + list[i].productId + ")</br>";
+          }
+          $("#before").append(json);
+          $("#after").append(contentStr);
+        }
+      })
+
+  });
   </script>
 </body>
 </html>
