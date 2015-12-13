@@ -213,6 +213,7 @@
 
   init();
   function init() {
+    document.getElementById("before").innerHTML = "Hello, World!";
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
