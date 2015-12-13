@@ -197,35 +197,21 @@
 
   <!-- jQuery parseJSON -->
   <script>
-  function loadJSON(callback) {   
+  function AJAX_JSON_Req( url ) {
+    var AJAX_req = new XMLHttpRequest();
+    AJAX_req.open( "GET", url, true );
+    AJAX_req.setRequestHeader("Content-type", "application/json");
 
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'data/test.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);
-  }
-
-  init();
-  function init() {
-    document.getElementById("before").innerHTML = "Hello, World!";
-    loadJSON(function(response) {
-      // Parse JSON string into object
-      var actual_JSON = JSON.parse(response);
-
-      var out = "";
-      var i;
-      for(i = 0; i < actual_JSON.length; i++) {
-        out += '<a href="' + actual_JSON[i].link + '">' + actual_JSON[i].title + '</a><br>';
+    AJAX_req.onreadystatechange = function() {
+      if( AJAX_req.readyState == 4 && AJAX_req.status == 200 ) {
+        var response = JSON.parse( AJAX_req.responseText );
+        document.getElementById('after').innerHTML = response[0].title;
       }
-      document.getElementById("after").innerHTML = actual_JSON.length;
-    });
+    }
+    AJAX_req.send();
   }
+
+  AJAX_JSON_Req( 'data/test.json' );
 </script>
 </body>
 </html>
