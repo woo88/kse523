@@ -172,26 +172,22 @@
 
   <!-- Read URL GET parameters -->
   <script type="text/javascript">
-  function $_GETURL(param) {
-    var vars = {};
-    window.location.href.replace( 
-      /[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
-      function( m, key, value ) { // callback
-        vars[key] = value !== undefined ? value : '';
+  function getParameter(theParameter) { 
+    var params = window.location.search.substr(1).split('&');
+   
+    for (var i = 0; i < params.length; i++) {
+      var p=params[i].split('=');
+      if (p[0] == theParameter) {
+        return decodeURIComponent(p[1]);
       }
-    );
-
-    if ( param ) {
-      return vars[param] ? vars[param] : null;  
     }
-    return vars;
+    return false;
   }
   </script>
 
   <script type="text/javascript">
   function getParam() {
-    var $_GETURL = $_GETURL();
-    var item_id = $_GETURL['id'];
+    var item_id = getParameter('id');
 
     document.getElementById('test').innerHTML = '<b>test test</b>';
   }
