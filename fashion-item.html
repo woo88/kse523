@@ -214,14 +214,18 @@
   init();
   function init() {
     loadJSON(function(response) {
+      var item_id = getParameter('id');
+
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
       
       var out = "";
       var i;
       for(i = 0; i < actual_JSON.length; i++) {
-        out += '<a href="' + actual_JSON[i].link + '">' + 
-        actual_JSON[i].title + '</a><br>';
+        if(actual_JSON[i].productId == item_id) {
+          out += '<a href="' + actual_JSON[i].link + '">' + 
+          actual_JSON[i].title + '</a><br>';
+        }
       }
       document.getElementById("after").innerHTML = out;
     });
