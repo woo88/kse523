@@ -29,7 +29,7 @@
   <script src="js/AnimOnScroll.js"></script>
 </head>
 
-<body>
+<body onload="init();">
 <div class="container">
   <!-- Fixed Header -->
   <header>
@@ -150,6 +150,7 @@
     <li><a href="#"><img src="images/11.png"></a></li>
     <li><a href="#"><img src="images/2.jpg"></a></li> -->
   </ul>
+  <p id="test"></p>
 </div>
 
 <!-- Grid Layout JS -->
@@ -205,7 +206,7 @@
     xobj.send(null);  
   }
 
-  init();
+  // init();
 
   function init() {
     loadJSON(function(response) {
@@ -230,7 +231,7 @@
         var element = document.getElementById("grid");
         element.appendChild(list);
       }
-      // document.getElementById("fashionbookList").innerHTML = out;
+      document.getElementById("test").innerHTML = actual_JSON[0].fashionId;
     });
   }
 </script>
