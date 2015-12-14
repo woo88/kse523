@@ -69,88 +69,7 @@
 
   <!-- Grid Layout -->
   <ul class="grid effect-3" id="grid">
-    <!-- <li id="fashionbookList"></li>
-    <li><a href="fashion-book.html"><img src="images/sample_codi.png">
-
-      <p>Title</p></a>
-
-      <p>20 likes</p></li>
-    <li><a href="#"><img src="images/3.jpg">
-
-      <p>Title</p></a>
-
-      <p>14 likes</p></li>
-    <li><a href="#"><img src="images/4.jpg">
-
-      <p>Title</p></a>
-
-      <p>34 likes</p></li>
-    <li><a href="#"><img src="images/12.png">
-
-      <p>Title</p></a>
-
-      <p>17 likes</p></li>
-    <li><a href="#"><img src="images/13.png">
-
-      <p>Title</p></a>
-
-      <p>0 likes</p></li>
-    <li><a href="#"><img src="images/10.png">
-
-      <p>Title</p></a>
-
-      <p>88 likes</p></li>
-    <li><a href="#"><img src="images/9.jpg">
-
-      <p>Title</p></a>
-
-      <p>2 likes</p></li>
-    <li><a href="#"><img src="images/2.jpg">
-
-      <p>Title</p></a>
-
-      <p>22 likes</p></li>
-    <li><a href="#"><img src="images/14.png"></a></li>
-    <li><a href="#"><img src="images/5.jpg"></a></li>
-    <li><a href="#"><img src="images/6.jpg"></a></li>
-    <li><a href="#"><img src="images/7.jpg"></a></li>
-    <li><a href="#"><img src="images/8.jpg"></a></li>
-    <li><a href="#"><img src="images/9.jpg"></a></li>
-    <li><a href="#"><img src="images/12.png"></a></li>
-    <li><a href="#"><img src="images/13.png"></a></li>
-    <li><a href="#"><img src="images/10.png"></a></li>
-    <li><a href="#"><img src="images/11.png"></a></li>
-    <li><a href="#"><img src="images/2.jpg"></a></li>
-    <li><a href="#"><img src="images/14.png"></a></li>
-    <li><a href="#"><img src="images/1.jpg"></a></li>
-    <li><a href="#"><img src="images/3.jpg"></a></li>
-    <li><a href="#"><img src="images/4.jpg"></a></li>
-    <li><a href="#"><img src="images/5.jpg"></a></li>
-    <li><a href="#"><img src="images/6.jpg"></a></li>
-    <li><a href="#"><img src="images/7.jpg"></a></li>
-    <li><a href="#"><img src="images/8.jpg"></a></li>
-    <li><a href="#"><img src="images/9.jpg"></a></li>
-    <li><a href="#"><img src="images/12.png"></a></li>
-    <li><a href="#"><img src="images/13.png"></a></li>
-    <li><a href="#"><img src="images/10.png"></a></li>
-    <li><a href="#"><img src="images/11.png"></a></li>
-    <li><a href="#"><img src="images/2.jpg"></a></li>
-    <li><a href="#"><img src="images/14.png"></a></li>
-    <li><a href="#"><img src="images/1.jpg"></a></li>
-    <li><a href="#"><img src="images/3.jpg"></a></li>
-    <li><a href="#"><img src="images/4.jpg"></a></li>
-    <li><a href="#"><img src="images/5.jpg"></a></li>
-    <li><a href="#"><img src="images/6.jpg"></a></li>
-    <li><a href="#"><img src="images/7.jpg"></a></li>
-    <li><a href="#"><img src="images/8.jpg"></a></li>
-    <li><a href="#"><img src="images/9.jpg"></a></li>
-    <li><a href="#"><img src="images/12.png"></a></li>
-    <li><a href="#"><img src="images/13.png"></a></li>
-    <li><a href="#"><img src="images/10.png"></a></li>
-    <li><a href="#"><img src="images/11.png"></a></li>
-    <li><a href="#"><img src="images/2.jpg"></a></li> -->
   </ul>
-  <p id="test"></p>
 </div>
 
 <!-- Grid Layout JS -->
@@ -219,19 +138,16 @@
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        out = '<a href="fashion-book.html?id=' + 
-        actual_JSON[i].fashionId +'"><img src="' + 
-        actual_JSON[i].image + '"></a><p>' + 
-        actual_JSON[i].likes + 'likes</p>';
+        out = '<a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>' + actual_JSON[i].likes + 'likes</p>';
 
-        var list = document.createElement("li");
+        var li = document.createElement("li");
         var node = document.createTextNode(out);
-        list.appendChild(node);
+        li.appendChild(node);
 
-        var element = document.getElementById("grid");
-        element.appendChild(list);
+        var ul = document.getElementById("grid");
+        ul.appendChild(li);
       }
-      document.getElementById("test").innerHTML = actual_JSON[0].fashionId;
+      // document.getElementById("test").innerHTML = actual_JSON[0].fashionId;
     });
   }
 </script>
