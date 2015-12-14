@@ -138,11 +138,21 @@
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        out = '<a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p>';
+        // out = '<a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p>';
+
+        var img = document.createElement("img");
+        img.setAttribute('src', actual_JSON[i].image);
+
+        var a = document.createElement('a');
+        a.setAttribute('href', 'fashion-book.html?id=' + actual_JSON[i].fashionId);
+        a.appendChild(img);
 
         var li = document.createElement("li");
-        var node = document.createTextNode(out);
-        li.appendChild(node);
+        li.appendChild(a);
+
+        var likes = document.createElement('p');
+        var node = document.createTextNode(actual_JSON[i].likes + ' likes');
+        li.appendChild(likes);
 
         var ul = document.getElementById("grid");
         ul.appendChild(li);

@@ -7,7 +7,8 @@
 "mallname": "네이버",
 "productId": "9074178114",
 "productType": "1",
-"reviews": []
+"reviews": [],
+"query": "니트"
 },
 {"title": "남자 <b>니트</b> 스웨터",
 "link": "http://openapi.naver.com/l?AAABXLOw+CMBSG4V9zOhLaU2gZOkCAxUGiA2HkcqTEcLWa4K+35nunL3n2Nx2ngSID7dNQ5KBTyDRz50bmZdeNPek0Wsp+iEioGMPETyVEHW+57GQohkgye9DDWOc2wBRE6fvbbVrGYGk/dAT9OvtzbB0Fi10Ay2kAzBMuMEIhFDJnuJRJrFCqWHPBZhOdILJer3ta13ujPP9idW0md6su0331/AeAkwYGvgAAAA==",
@@ -27,6 +28,7 @@
         "bloggername": "브로앤시스",
         "bloggerlink": "http://blog.naver.com/ttuttu_girl"
     }
-]
+],
+"qeury": "니트"
 }
 ]
