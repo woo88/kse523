@@ -12,5 +12,68 @@
   "userId": "000003",
   "items": ["9123532273", "9074178114"],
   "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/2.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/2.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/7.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/2.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/7.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/2.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/7.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/2.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+},
+{
+  "fashionId": "000002",
+  "image": "images/7.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
 }
 ]
