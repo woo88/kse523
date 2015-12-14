@@ -152,6 +152,7 @@
 
         var likes = document.createElement('p');
         var node = document.createTextNode(actual_JSON[i].likes + ' likes');
+        likes.appendChild(node);
         li.appendChild(likes);
 
         var ul = document.getElementById("grid");
