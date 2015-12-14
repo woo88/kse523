@@ -1,0 +1,16 @@
+[
+{
+  "fashionId": "000001",
+  "image": "images/sample_codi.png",
+  "userId": "000002",
+  "items": ["9074178114", "9123532273"],
+  "likes": 88
+},
+{
+  "fashionId": "000002",
+  "image": "images/2.jpg",
+  "userId": "000003",
+  "items": ["9123532273", "9074178114"],
+  "likes": 2
+}
+]

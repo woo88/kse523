@@ -69,6 +69,7 @@
 
   <!-- Grid Layout -->
   <ul class="grid effect-3" id="grid">
+    <li id="fashionbookList"></li>
     <li><a href="fashion-book.html"><img src="images/sample_codi.png">
 
       <p>Title</p></a>
@@ -190,7 +191,41 @@
 </script>
 
 <script>
+  function loadJSON(callback) {   
 
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  init();
+
+  function init() {
+    loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+      
+      var out = "";
+      var i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        // out += '<a href="' + actual_JSON[i].link + '">' + 
+        // actual_JSON[i].title + '</a><br>';
+
+        out += '<li><a href="fashion-book.html?id=' + 
+        actual_JSON[i].fashionId +'"><img src="' + 
+        actual_JSON[i].image + '"></a><p>' + 
+        actual_JSON[i].likes + 'likes</p></li>';
+      }
+      document.getElementById("fashionbookList").innerHTML = out;
+    });
+  }
 </script>
 </body>
 </html>
