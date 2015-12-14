@@ -213,9 +213,9 @@
 
   init();
   function init() {
-    loadJSON(function(response) {
-      var item_id = getParameter('id');
+    var item_id = getParameter('id');
 
+    loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
       
