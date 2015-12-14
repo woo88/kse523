@@ -68,7 +68,7 @@
   </header>
 
   <!-- Grid Layout -->
-  <ul class="grid effect-3" id="grid">
+  <ul class="grid effect-1" id="grid">
   </ul>
 </div>
 
@@ -141,11 +141,7 @@
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        if(i < 3) {
-          out += '<li class="shown"><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
-        } else {
-          out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
-        }
+        out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
 
         var img = document.createElement("img");
         img.setAttribute('src', actual_JSON[i].image);
