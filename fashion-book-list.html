@@ -141,7 +141,11 @@
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        out += '<li class="shown"><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
+        if(i < 3) {
+          out += '<li class="shown"><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
+        } else {
+          out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
+        }
 
         var img = document.createElement("img");
         img.setAttribute('src', actual_JSON[i].image);
