@@ -29,8 +29,8 @@
   <script src="js/AnimOnScroll.js"></script>
 </head>
 
-<body onload="init();">
-<div class="container">
+<body>
+<div class="container" id="grid-list">
   <!-- Fixed Header -->
   <header>
     <div id="jquery-script-menu">
@@ -68,8 +68,8 @@
   </header>
 
   <!-- Grid Layout -->
-  <ul class="grid effect-3" id="grid">
-  </ul>
+  <!-- <ul class="grid effect-3" id="grid">
+  </ul> -->
 </div>
 
 <!-- Grid Layout JS -->
@@ -125,7 +125,7 @@
     xobj.send(null);  
   }
 
-  // init();
+  init();
 
   function init() {
     loadJSON(function(response) {
@@ -134,6 +134,10 @@
       
       var out = "";
       var i;
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'grid effect-3');
+      ul.setAttribute('id', 'grid');
+
       for(i = 0; i < actual_JSON.length; i++) {
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
@@ -155,10 +159,12 @@
         likes.appendChild(node);
         li.appendChild(likes);
 
-        var ul = document.getElementById("grid");
+        // var ul = document.getElementById("grid");
         ul.appendChild(li);
       }
       // document.getElementById("test").innerHTML = actual_JSON[0].fashionId;
+      var div = document.getElementById('grid-list');
+      div.appendChild(ul);
     });
   }
 </script>
