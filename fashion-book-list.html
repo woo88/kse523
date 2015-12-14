@@ -72,14 +72,7 @@
   </ul>
 </div>
 
-<!-- Grid Layout JS -->
-<script>
-  // new AnimOnScroll( document.getElementById( 'grid' ), {
-  //     minDuration : 0.4,
-  //     maxDuration : 0.7,
-  //     viewportFactor : 0.2
-  // });
-</script>
+
 
 <!-- Toggle Search JS -->
 <script type="text/javascript">
@@ -140,7 +133,7 @@
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        out += '<li class="shown"><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
+        out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
 
         var img = document.createElement("img");
         img.setAttribute('src', actual_JSON[i].image);
@@ -163,6 +156,15 @@
       document.getElementById("grid").innerHTML = out;
     });
   }
+</script>
+
+<!-- Grid Layout JS -->
+<script>
+  new AnimOnScroll( document.getElementById( 'grid' ), {
+      minDuration : 0.4,
+      maxDuration : 0.7,
+      viewportFactor : 0.2
+  });
 </script>
 </body>
 </html>
