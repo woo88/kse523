@@ -69,7 +69,7 @@
 
   <!-- Grid Layout -->
   <ul class="grid effect-3" id="grid">
-    <li id="fashionbookList"></li>
+    <!-- <li id="fashionbookList"></li>
     <li><a href="fashion-book.html"><img src="images/sample_codi.png">
 
       <p>Title</p></a>
@@ -148,7 +148,7 @@
     <li><a href="#"><img src="images/13.png"></a></li>
     <li><a href="#"><img src="images/10.png"></a></li>
     <li><a href="#"><img src="images/11.png"></a></li>
-    <li><a href="#"><img src="images/2.jpg"></a></li>
+    <li><a href="#"><img src="images/2.jpg"></a></li> -->
   </ul>
 </div>
 
@@ -218,12 +218,19 @@
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        out += '<li><a href="fashion-book.html?id=' + 
+        out = '<a href="fashion-book.html?id=' + 
         actual_JSON[i].fashionId +'"><img src="' + 
         actual_JSON[i].image + '"></a><p>' + 
-        actual_JSON[i].likes + 'likes</p></li>';
+        actual_JSON[i].likes + 'likes</p>';
+
+        var list = document.createElement("li");
+        var node = document.createTextNode(out);
+        list.appendChild(node);
+
+        var element = document.getElementById("grid");
+        element.appendChild(list);
       }
-      document.getElementById("fashionbookList").innerHTML = out;
+      // document.getElementById("fashionbookList").innerHTML = out;
     });
   }
 </script>
