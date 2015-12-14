@@ -1,21 +1,82 @@
 <html>
-<head></head>
-<body>
-  <ul id="grid"></ul>
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <script>
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <!-- Add clearfix for only the required viewport -->
+      <div class="clearfix visible-xs"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <!-- Add clearfix for only the required viewport -->
+      <div class="clearfix visible-xs"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="images/11.png" alt="...">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
   function loadJSON(callback) {   
 
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-        callback(xobj.responseText);
-      }
-    };
-    xobj.send(null);  
+  var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+  xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+      callback(xobj.responseText);
+    }
+  };
+  xobj.send(null);  
   }
 
   init();
@@ -27,11 +88,15 @@
       
       var out = "";
       var i;
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'grid effect-3');
+      ul.setAttribute('id', 'grid');
+
       for(i = 0; i < actual_JSON.length; i++) {
         // out += '<a href="' + actual_JSON[i].link + '">' + 
         // actual_JSON[i].title + '</a><br>';
 
-        // out = '<a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p>';
+        out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
 
         var img = document.createElement("img");
         img.setAttribute('src', actual_JSON[i].image);
@@ -48,10 +113,10 @@
         likes.appendChild(node);
         li.appendChild(likes);
 
-        var ul = document.getElementById("grid");
+        // var ul = document.getElementById("grid");
         ul.appendChild(li);
       }
-      // document.getElementById("test").innerHTML = actual_JSON[0].fashionId;
+      document.getElementById("grid").innerHTML = out;
     });
   }
   </script>
