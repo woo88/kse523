@@ -18,65 +18,6 @@
   <!-- Grid Layout CSS -->
   <link rel="stylesheet" type="text/css" href="css/grid.css"/>
 
-  <script>
-  function loadJSON(callback) {   
-
-    var xobj = new XMLHttpRequest();
-        xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-        callback(xobj.responseText);
-      }
-    };
-    xobj.send(null);  
-  }
-
-  init();
-
-  function init() {
-    loadJSON(function(response) {
-      // Parse JSON string into object
-      var actual_JSON = JSON.parse(response);
-      
-      var out = "";
-      var i;
-      var ul = document.createElement('ul');
-      ul.setAttribute('class', 'grid effect-3');
-      ul.setAttribute('id', 'grid');
-
-      for(i = 0; i < actual_JSON.length; i++) {
-        // out += '<a href="' + actual_JSON[i].link + '">' + 
-        // actual_JSON[i].title + '</a><br>';
-
-        // out = '<a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p>';
-
-        var img = document.createElement("img");
-        img.setAttribute('src', actual_JSON[i].image);
-
-        var a = document.createElement('a');
-        a.setAttribute('href', 'fashion-book.html?id=' + actual_JSON[i].fashionId);
-        a.appendChild(img);
-
-        var li = document.createElement("li");
-        li.appendChild(a);
-
-        var likes = document.createElement('p');
-        var node = document.createTextNode(actual_JSON[i].likes + ' likes');
-        likes.appendChild(node);
-        li.appendChild(likes);
-
-        // var ul = document.getElementById("grid");
-        ul.appendChild(li);
-      }
-      // document.getElementById("test").innerHTML = actual_JSON[0].fashionId;
-      var div = document.getElementById('grid-list');
-      div.appendChild(ul);
-    });
-  }
-</script>
-
   <!-- jQuery for Toggle Search JS -->
   <script src="js/jquery-2.1.4.min.js"></script>
 
@@ -127,8 +68,8 @@
   </header>
 
   <!-- Grid Layout -->
-  <!-- <ul class="grid effect-3" id="grid">
-  </ul> -->
+  <ul class="grid effect-3" id="grid">
+  </ul>
 </div>
 
 <!-- Grid Layout JS -->
@@ -166,7 +107,63 @@
       }
     });
   });
+</script>
 
+<script>
+  function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  init();
+
+  function init() {
+    loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+      
+      var out = "";
+      var i;
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'grid effect-3');
+      ul.setAttribute('id', 'grid');
+
+      for(i = 0; i < actual_JSON.length; i++) {
+        // out += '<a href="' + actual_JSON[i].link + '">' + 
+        // actual_JSON[i].title + '</a><br>';
+
+        out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
+
+        var img = document.createElement("img");
+        img.setAttribute('src', actual_JSON[i].image);
+
+        var a = document.createElement('a');
+        a.setAttribute('href', 'fashion-book.html?id=' + actual_JSON[i].fashionId);
+        a.appendChild(img);
+
+        var li = document.createElement("li");
+        li.appendChild(a);
+
+        var likes = document.createElement('p');
+        var node = document.createTextNode(actual_JSON[i].likes + ' likes');
+        likes.appendChild(node);
+        li.appendChild(likes);
+
+        // var ul = document.getElementById("grid");
+        ul.appendChild(li);
+      }
+      document.getElementById("grid").innerHTML = out;
+    });
+  }
 </script>
 </body>
 </html>
