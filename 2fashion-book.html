@@ -140,6 +140,8 @@
       }
     });
 
+    header.appendChild(header_row);
+
     loadJSON2(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
@@ -150,18 +152,18 @@
       var n = 0;
 
       // Header
-      var header_col = document.createElement("div");
-      header_col.setAttribute("class", "col-xs-6 col-md-6");
-      var table = document.createElement("table");
-      table.setAttribute("class", "table");
-      var tr = document.createElement("tr");
-      var th_name = document.createElement("th");
-      th_name.appendChild(document.createTextNode("Itme Name"));
-      var th_price = document.createElement("th");
-      th_price.appendChild(document.createTextNode("Lowest Price"));
-      tr.appendChild(th_name);
-      tr.appendChild(th_price);
-      table.appendChild(tr);
+      // var header_col = document.createElement("div");
+      // header_col.setAttribute("class", "col-xs-6 col-md-6");
+      // var table = document.createElement("table");
+      // table.setAttribute("class", "table");
+      // var tr = document.createElement("tr");
+      // var th_name = document.createElement("th");
+      // th_name.appendChild(document.createTextNode("Itme Name"));
+      // var th_price = document.createElement("th");
+      // th_price.appendChild(document.createTextNode("Lowest Price"));
+      // tr.appendChild(th_name);
+      // tr.appendChild(th_price);
+      // table.appendChild(tr);
 
       // Grid
       var row = document.createElement("div");
@@ -186,14 +188,14 @@
             }
 
             // Header
-            var td_name = document.createElement("td");
-            td_name.appendChild(document.createTextNode(actual_JSON[j].title));
-            var td_price = document.createElement("td");
-            td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
-            var tr = document.createElement("tr");
-            tr.appendChild(td_name);
-            tr.appendChild(td_price);
-            table.appendChild(tr);
+            // var td_name = document.createElement("td");
+            // td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+            // var td_price = document.createElement("td");
+            // td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+            // var tr = document.createElement("tr");
+            // tr.appendChild(td_name);
+            // tr.appendChild(td_price);
+            // table.appendChild(tr);
           }
         }
       }
@@ -203,9 +205,9 @@
       grid.appendChild(row);
 
       // Header
-      header_col.appendChild(table);
-      header_row.appendChild(header_col);
-      header.appendChild(header_row);
+      // header_col.appendChild(table);
+      // header_row.appendChild(header_col);
+      // header.appendChild(header_row);
     });
   }
   </script>
