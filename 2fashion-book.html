@@ -55,6 +55,7 @@
           </div>
         </div>
       </article>
+      <div id="test"></div>
     </main>
     <nav class="h28" role="navigation">navigation</nav>
     <footer class="g28" role="contentinfo">footer</footer>
@@ -127,6 +128,7 @@
 
   function init() {
     var idArr = getParameter('id');
+    document.getElementById("test").innerHTML = idArr;
 
     loadJSON(function(response) {
       // Parse JSON string into object
