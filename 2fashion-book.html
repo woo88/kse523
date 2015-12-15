@@ -80,7 +80,7 @@
 
   <!-- Load JSON file -->
   <script>
-  function loadJSON(callback) {
+  function loadJSONN(callback) {
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
@@ -93,7 +93,7 @@
     xobj.send(null);  
   }
 
-  function loadJSON2(callback) {
+  function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'data/test.json', true); // Replace 'my_data' with the path to your file
@@ -106,25 +106,26 @@
     xobj.send(null);  
   }
 
-  var id = getParameter('id');
-  document.getElementById("test").innerHTML = id;
-  var itemArr = [];
-
-  loadJSON(function(response) {
-    // Parse JSON string into object
-    var actual_JSON = JSON.parse(response);
-
-    int i;
-    for(i = 0; i < actual_JSON.length; i++) {
-      if(id == actual_JSON[i].fashionId) {
-        itemArr = actual_JSON[i].items;
-      }
-    }
-  });
   init();
 
   function init() {
-    loadJSON2(function(response) {
+    var id = getParameter('id');
+    document.getElementById("test").innerHTML = id;
+    var itemArr = [];
+
+    loadJSONN(function(responsee) {
+      // Parse JSON string into object
+      var actual_JSONN = JSON.parse(responsee);
+
+      int i;
+      for(i = 0; i < actual_JSONN.length; i++) {
+        if(id == actual_JSONN[i].fashionId) {
+          itemArr = actual_JSONN[i].items;
+        }
+      }
+    });
+
+    loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
       
