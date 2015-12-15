@@ -84,6 +84,15 @@ article, div, footer, header, main, nav, section, #react-root {
     margin:30px 20px;
 }
 
+/*Nav*/
+.r79{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin:0 auto;width:100%}.s79{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;left:-3px;margin-bottom:-2px;position:relative}.t79{-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;-webkit-flex-shrink:1;-ms-flex-negative:1;flex-shrink:1;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;width:0}.n79,.t79 button{font-weight:600;overflow:hidden;text-align:right;text-overflow:ellipsis;white-space:nowrap}.t79 button{background:0 0;border:0;cursor:pointer;padding:0}.o79,.o79:visited,.p79{color:#4090db}.o79:hover,.p79:hover{color:#2d6599}.o79:active,.p79:active{color:#20486d}@media (orientation:portrait) and (min-width:448px),(orientation:landscape) and (min-height:415px){.r79{height:77px;padding:26px 0}.n79,.t79 button{font-size:16px;line-height:22px;margin-right:20px}.t79{margin-left:30px;margin-right:-20px}}@media (orientation:portrait) and (max-width:447px),(orientation:landscape) and (max-height:414px){.s79{margin-right:-41px;-webkit-transform:translate3d(0,0,0) scale(.67);transform:translate3d(0,0,0) scale(.67);-webkit-transform-origin:left;transform-origin:left}.r79{height:77px;padding:26px 0}.n79,.t79 button{font-size:14px;line-height:17px;margin-right:15px}.t79{margin-left:20px;margin-right:-15px}}@media (max-width:475px){.q79{display:none}}
+/*Search*/
+.p0a{left:50%;margin-left:-183px;position:absolute;top:0}
+
+.g28, .h28 {
+    padding: 0 20px;
+}
+
 .h28 {
     border-bottom-color: #edeeee;
     border-bottom-width: 1px;
@@ -91,10 +100,6 @@ article, div, footer, header, main, nav, section, #react-root {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
-}
-
-.g28, .h28 {
-    padding: 0 20px;
 }
 
 .g28 {
