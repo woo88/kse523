@@ -80,6 +80,10 @@ article, div, footer, header, main, nav, section, #react-root {
     flex-direction: row;
 }
 
+.j38 {
+    margin:30px 20px;
+}
+
 .h28 {
     border-bottom-color: #edeeee;
     border-bottom-width: 1px;
