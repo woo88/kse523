@@ -32,7 +32,7 @@
       <article class="i38">
         <header class="j38">
           <div class="container-fluid" id="header">
-            <div class="row">
+            <div class="row" style="max-width:935px;">
               <div class="col-xs-5 col-md-5">
                 <a href="#" class="thumbnail" id="fImage"></a>
               </div>
@@ -172,13 +172,44 @@
       var iTbody = document.getElementById("iTbody");
 
       // Grid
-      var row = document.createElement("div");
-      row.setAttribute("class", "row");
+      var h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode("Related Items"));
+      var grid = document.getElementById("grid");
+      grid.appendChild(h2);
+      var row;
       for(i = 0; i < itemArr.length; i++) {
         for(j = 0; j < actual_JSON.length; j++) {
           if(actual_JSON[j].productId == itemArr[i]) {
-            // Grid
-            if(itemArr.length <= 3) {
+            if((i % 3) == 0) {
+              if(i == 0) {
+                row = document.createElement("div");
+                row.setAttribute("class", "row");
+                var col = document.createElement("div");
+                col.setAttribute("class", "col-xs-6 col-md-4");
+                var a = document.createElement("a");
+                a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
+                a.setAttribute("class", "thumbnail");
+                var img = document.createElement("img");
+                img.setAttribute("src", actual_JSON[j].image);
+                a.appendChild(img);
+                col.appendChild(a);
+                row.appendChild(col);
+              } else {
+                grid.appendChild(row);
+                row = document.createElement("div");
+                row.setAttribute("class", "row");
+                var col = document.createElement("div");
+                col.setAttribute("class", "col-xs-6 col-md-4");
+                var a = document.createElement("a");
+                a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
+                a.setAttribute("class", "thumbnail");
+                var img = document.createElement("img");
+                img.setAttribute("src", actual_JSON[j].image);
+                a.appendChild(img);
+                col.appendChild(a);
+                row.appendChild(col);
+              }
+            } else {
               var col = document.createElement("div");
               col.setAttribute("class", "col-xs-6 col-md-4");
               var a = document.createElement("a");
@@ -189,8 +220,6 @@
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
-            } else {
-              //
             }
 
             // Header
@@ -206,13 +235,6 @@
           }
         }
       }
-
-      // Grid
-      var h2 = document.createElement("h2");
-      h2.appendChild(document.createTextNode("Related Items"));
-      var grid = document.getElementById("grid");
-      grid.appendChild(h2);
-      grid.appendChild(row);
     });
   }
   </script>
