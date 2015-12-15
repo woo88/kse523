@@ -113,11 +113,21 @@
     document.getElementById("test").innerHTML = id;
     var itemArr = [];
 
-
-
-    loadJSON2(function(response) {
+    loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
+
+      int i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        if(id == actual_JSON[i].fashionId) {
+          itemArr = actual_JSON[i].items;
+        }
+      }
+    });
+
+    loadJSON2(function(response2) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response2);
       
       var out = "";
       var i;
