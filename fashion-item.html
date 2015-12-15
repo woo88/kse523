@@ -169,106 +169,104 @@
           var tr = document.createElement("tr");
           tr.setAttribute("class", "success");
           var td = document.createElement("td");
-          td.appendChild(document.createTextNode("Product Name:");
+          td.appendChild(document.createTextNode("Product Name:"));
           tr.appendChild(td);
           var td = document.createElement("td");
           td.appendChild(document.createTextNode(actual_JSON[i].title));
           tr.appendChild(td);
           iTbody.appendChild(tr);
           // Lowest Price
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "danger");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Lowest Price:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].lprice));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
-          // // Mall Name
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "info");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Mall Name:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].mallname));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
-          // // Tag
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "warning");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Tag:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].query));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "danger");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Lowest Price:"));
+          tr.appendChild(td);
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].lprice));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
+          // Mall Name
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "info");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Mall Name:"));
+          tr.appendChild(td);
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].mallname));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
+          // Tag
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "warning");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Tag:"));
+          tr.appendChild(td);
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].query));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
 
-          // query = actual_JSON[i].query;
+          query = actual_JSON[i].query;
         }
       }
 
       // Grid - Related Items
-      // var h2 = document.createElement("h2");
-      // h2.appendChild(document.createTextNode("Related Items"));
-      // var grid = document.getElementById("grid");
-      // grid.appendChild(h2);
-      // var row;
-      // var n = 0;
-      // for(i = 0; i < actual_JSON.length; i++) {
-      //   if(query == actual_JSON[i]) {
-      //     if(n >= 6) {
-      //       break;
-      //     }
+      var h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode("Related Items"));
+      var grid = document.getElementById("grid");
+      grid.appendChild(h2);
+      var row;
+      var n = 0;
+      for(i = 0; i < actual_JSON.length; i++) {
+        if(query == actual_JSON[i]) {
+          if(n >= 6) break;
 
-      //     if((n % 3) == 0) {
-      //       if(n == 0) {
-      //         row = document.createElement("div");
-      //         row.setAttribute("class", "row");
-      //         var col = document.createElement("div");
-      //         col.setAttribute("class", "col-xs-4 col-md-4");
-      //         var a = document.createElement("a");
-      //         a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-      //         a.setAttribute("class", "thumbnail");
-      //         var img = document.createElement("img");
-      //         img.setAttribute("src", actual_JSON[i].image);
-      //         a.appendChild(img);
-      //         col.appendChild(a);
-      //         row.appendChild(col);
-      //       } else {
-      //         grid.appendChild(row);
-      //         row = document.createElement("div");
-      //         row.setAttribute("class", "row");
-      //         var col = document.createElement("div");
-      //         col.setAttribute("class", "col-xs-4 col-md-4");
-      //         var a = document.createElement("a");
-      //         a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-      //         a.setAttribute("class", "thumbnail");
-      //         var img = document.createElement("img");
-      //         img.setAttribute("src", actual_JSON[i].image);
-      //         a.appendChild(img);
-      //         col.appendChild(a);
-      //         row.appendChild(col);
-      //       }
-      //     } else {
-      //       var col = document.createElement("div");
-      //       col.setAttribute("class", "col-xs-4 col-md-4");
-      //       var a = document.createElement("a");
-      //       a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-      //       a.setAttribute("class", "thumbnail");
-      //       var img = document.createElement("img");
-      //       img.setAttribute("src", actual_JSON[i].image);
-      //       a.appendChild(img);
-      //       col.appendChild(a);
-      //       row.appendChild(col);
-      //     }
+          if((n % 3) == 0) {
+            if(n == 0) {
+              row = document.createElement("div");
+              row.setAttribute("class", "row");
+              var col = document.createElement("div");
+              col.setAttribute("class", "col-xs-4 col-md-4");
+              var a = document.createElement("a");
+              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+              a.setAttribute("class", "thumbnail");
+              var img = document.createElement("img");
+              img.setAttribute("src", actual_JSON[i].image);
+              a.appendChild(img);
+              col.appendChild(a);
+              row.appendChild(col);
+            } else {
+              grid.appendChild(row);
+              row = document.createElement("div");
+              row.setAttribute("class", "row");
+              var col = document.createElement("div");
+              col.setAttribute("class", "col-xs-4 col-md-4");
+              var a = document.createElement("a");
+              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+              a.setAttribute("class", "thumbnail");
+              var img = document.createElement("img");
+              img.setAttribute("src", actual_JSON[i].image);
+              a.appendChild(img);
+              col.appendChild(a);
+              row.appendChild(col);
+            }
+          } else {
+            var col = document.createElement("div");
+            col.setAttribute("class", "col-xs-4 col-md-4");
+            var a = document.createElement("a");
+            a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+            a.setAttribute("class", "thumbnail");
+            var img = document.createElement("img");
+            img.setAttribute("src", actual_JSON[i].image);
+            a.appendChild(img);
+            col.appendChild(a);
+            row.appendChild(col);
+          }
 
-      //     n++;
-      //   }
-      // }
-      // grid.appendChild(row);
+          n++;
+        }
+      }
+      grid.appendChild(row);
     });
   }
   </script>
