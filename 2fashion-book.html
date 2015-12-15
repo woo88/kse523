@@ -89,6 +89,19 @@
   function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  function loadJSON2(callback) {
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
     xobj.open('GET', 'data/test.json', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4 && xobj.status == "200") {
@@ -102,10 +115,23 @@
   init();
 
   function init() {
-    var idArr = getParameter('id');
-    document.getElementById("test").innerHTML = idArr;
+    var fashionId = getParameter('id');
+    document.getElementById("test").innerHTML = fashionId;
+    var itemArr = [];
 
     loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+
+      int i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        if(fashionId == actual_JSON[i].fashionId) {
+          itemArr = actual_JSON[i].items;
+        }
+      }
+    });
+
+    loadJSON2(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
       
@@ -115,11 +141,11 @@
       var n = 0;
       var row = document.createElement("div");
       row.setAttribute("class", "row");
-      for(i = 0; i < idArr.length; i++) {
+      for(i = 0; i < itemArr.length; i++) {
         for(j = 0; j < actual_JSON.length; j++) {
-          if(actual_JSON[j].productId == idArr[i]) {
+          if(actual_JSON[j].productId == itemArr[i]) {
             // "9074178114", "9018713502"
-            if(idArr.length <= 3) {
+            if(itemArr.length <= 3) {
               var col = document.createElement("div");
               col.setAttribute("class", "col-xs-6 col-md-4");
               var a = document.createElement("a");
