@@ -44,7 +44,7 @@ article, div, footer, header, main, nav, section, #react-root {
     -ms-flex-order: 2;
     order: 2;
 
-    margin-top: 85px;
+    padding-top: 82px;
 }
 
 @media (min-width: 736px)
@@ -112,6 +112,7 @@ article, div, footer, header, main, nav, section, #react-root {
     width: 100%;
     top: 0;
     left: 0;
+    background-color: #fff;
 }
 
 .g28 {
