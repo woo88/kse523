@@ -57,10 +57,12 @@
     </main>
     <nav class="h28" role="navigation">
       <div class="r79" style="max-width:935px;">
-        <a class="s79 u77" href="/index.html">Fashionbook</a>
+        <a class="s79 u77" href="/index.html"><h1>Fashionbook</h1></a>
         <div class="t79">
           <div class="q79 p0a">search</div>
-          <a class="n79" href="signin.html">Login</a>
+          <a class="n79" href="signin.html">
+            <button type="button" class="btn btn-primary">Login</button>
+          </a>
         </div>
       </div>
     </nav>
@@ -145,7 +147,7 @@
 
   function init() {
     var id = getParameter('id');
-    document.getElementById("test").innerHTML = id;
+    // document.getElementById("test").innerHTML = id;
     var itemArr = [];
 
     loadJSON(function(response) {
