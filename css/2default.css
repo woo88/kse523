@@ -130,3 +130,6 @@ article, div, footer, header, main, nav, section, #react-root {
     -ms-flex-direction:row;
     flex-direction:row
 }
+
+/*Footer*/
+.n09{font-size:12px;font-weight:600;margin:0 auto;text-transform:uppercase;width:100%}.s09{color:#4b4f54;margin: 0 auto}.m09{display:inline-block;margin-bottom:7px;margin-right:16px}.m09:last-child{margin-right:0}.r09{-webkit-box-flex:1;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;margin-bottom:3px}@media (min-width:875px){.p09{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;padding:38px 0}.p09 .q09{max-width:100%}.p09 .r09{margin-right:16px}}@media (max-width:874px){.p09{padding:10px 0;text-align:center}.p09 .r09{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:0 auto;max-width:360px}}.o09{padding:10px 0;text-align:center}.o09 .r09{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:0 auto;max-width:360px}
