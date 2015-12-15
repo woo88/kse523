@@ -28,32 +28,7 @@
     <main class="j28" role="main">
       <article class="i38">
         <header class="j38">article header</header>
-        <div class="container-fluid" id="grid">
-          <div class="row">
-            <div class="col-xs-6 col-md-4">
-              <a href="#" class="thumbnail">
-                <img src="images/7.jpg" alt="...">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <a href="#" class="thumbnail">
-                <img src="images/7.jpg" alt="...">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-4">
-              <a href="#" class="thumbnail">
-                <img src="images/7.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6 col-md-4">
-              <a href="#" class="thumbnail">
-                <img src="images/7.jpg" alt="...">
-              </a>
-            </div>
-          </div>
-        </div>
+        <div class="container-fluid" id="grid"></div>
       </article>
       <div id="test"></div>
     </main>
@@ -114,7 +89,7 @@
   function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'data/test.json', true); // Replace 'my_data' with the path to your file
+    xobj.open('GET', 'data/items.json', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
       if (xobj.readyState == 4 && xobj.status == "200") {
         // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
