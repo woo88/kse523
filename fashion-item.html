@@ -210,65 +210,7 @@
         }
       }
 
-      // Grid - Related Items
-      var h2 = document.createElement("h2");
-      h2.appendChild(document.createTextNode("Related Items"));
-      var grid = document.getElementById("grid");
-      grid.appendChild(h2);
-      var row;
-      var n = 0;
-      for(i = 0; i < actual_JSON.length; i++) {
-        if(query == actual_JSON[i]) {
-          if(n >= 6) {
-            break;
-          }
 
-          if((n % 3) == 0) {
-            if(n == 0) {
-              row = document.createElement("div");
-              row.setAttribute("class", "row");
-              var col = document.createElement("div");
-              col.setAttribute("class", "col-xs-4 col-md-4");
-              var a = document.createElement("a");
-              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-              a.setAttribute("class", "thumbnail");
-              var img = document.createElement("img");
-              img.setAttribute("src", actual_JSON[i].image);
-              a.appendChild(img);
-              col.appendChild(a);
-              row.appendChild(col);
-            } else {
-              grid.appendChild(row);
-              row = document.createElement("div");
-              row.setAttribute("class", "row");
-              var col = document.createElement("div");
-              col.setAttribute("class", "col-xs-4 col-md-4");
-              var a = document.createElement("a");
-              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-              a.setAttribute("class", "thumbnail");
-              var img = document.createElement("img");
-              img.setAttribute("src", actual_JSON[i].image);
-              a.appendChild(img);
-              col.appendChild(a);
-              row.appendChild(col);
-            }
-          } else {
-            var col = document.createElement("div");
-            col.setAttribute("class", "col-xs-4 col-md-4");
-            var a = document.createElement("a");
-            a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-            a.setAttribute("class", "thumbnail");
-            var img = document.createElement("img");
-            img.setAttribute("src", actual_JSON[i].image);
-            a.appendChild(img);
-            col.appendChild(a);
-            row.appendChild(col);
-          }
-
-          n++;
-        }
-      }
-      grid.appendChild(row);
     });
   }
   </script>
