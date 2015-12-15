@@ -28,7 +28,7 @@
     <main class="j28" role="main">
       <article class="i38">
         <header class="j38">article header</header>
-        <div class="container-fluid">
+        <div class="container-fluid" id="grid">
           <div class="row">
             <div class="col-xs-6 col-md-4">
               <a href="#" class="thumbnail">
@@ -159,7 +159,7 @@
           }
         }
       }
-      var grid = document.getElementById("container-fluid");
+      var grid = document.getElementById("grid");
       grid.appendChild(row);
     });
   }
