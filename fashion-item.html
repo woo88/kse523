@@ -40,14 +40,9 @@
                 <table class="table">
                   <col width="30%">
                   <col width="70%">
-<!--                   <thead>
-                    <tr>
-                      <th>Item Name</th>
-                      <th>Lowest Price</th>
-                    </tr>
-                  </thead> -->
                   <tbody id="iTbody"></tbody>
                 </table>
+                <div id="buyBtn"></div>
               </div>
             </div>
           </div>
@@ -205,6 +200,17 @@
           td.appendChild(document.createTextNode(actual_JSON[i].query));
           tr.appendChild(td);
           iTbody.appendChild(tr);
+
+          // Buy button
+          var btn = document.createElement("Button");
+          btn.setAttribute("type", "button");
+          btn.setAttribute("class", "btn btn-success");
+          btn.appendChild(document.createTextNode("Go to buy"));
+          var a = document.createElement("a");
+          a.setAttribute("href", actual_JSON[i].link);
+          a.setAttribute("target", "_blank");
+          var div = document.getElementById("buyBtn");
+          div.appendChild(a);
 
           query = actual_JSON[i].query;
         }
