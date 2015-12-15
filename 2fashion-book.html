@@ -34,25 +34,13 @@
           <div class="container-fluid" id="header">
             <div class="row">
               <div class="col-xs-6 col-md-6">
-                <a href="#" class="thumbnail"><img src="images/sample_codi.png"></a>
+                <a href="#" class="thumbnail" id="fImage"></a>
               </div>
               <div class="col-xs-6 col-md-6">
-                <table class="table">
+                <table class="table" id="iTable">
                   <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                  </tr>
-                  <tr class="success">
-                    <td>John</td>
-                    <td>Doe</td>
-                  </tr>
-                  <tr class="danger">
-                    <td>Mary</td>
-                    <td>Moe</td>
-                  </tr>
-                  <tr class="info">
-                    <td>July</td>
-                    <td>Dooley</td>
+                    <th>Item Name</th>
+                    <th>Lowest Price</th>
                   </tr>
                 </table>
               </div>
@@ -143,9 +131,6 @@
     var id = getParameter('id');
     document.getElementById("test").innerHTML = id;
     var itemArr = [];
-    var header_row = document.createElement("div");
-    header_row.setAttribute("class", "row");
-    var header = document.getElementById("header");
 
     loadJSON(function(response) {
       // Parse JSON string into object
@@ -157,15 +142,8 @@
           itemArr = actual_JSON[i].items;
           var img = document.createElement("img");
           img.setAttribute("src", actual_JSON[i].image);
-          var a = document.createElement("a");
-          a.setAttribute("href", "#");
-          a.setAttribute("class", "thumbnail");
+          var a = document.getElementById("fImage");
           a.appendChild(img);
-          var header_col = document.createElement("div");
-          header_col.setAttribute("class", "col-xs-6 col-md-6");
-          header_col.appendChild(a);
-          header_row.appendChild(header_col);
-          // header.appendChild(header_row);
         }
       }
     });
@@ -180,18 +158,7 @@
       var n = 0;
 
       // Header
-      var header_col = document.createElement("div");
-      header_col.setAttribute("class", "col-xs-6 col-md-6");
-      var table = document.createElement("table");
-      table.setAttribute("class", "table");
-      var tr = document.createElement("tr");
-      var th_name = document.createElement("th");
-      th_name.appendChild(document.createTextNode("Item Name"));
-      var th_price = document.createElement("th");
-      th_price.appendChild(document.createTextNode("Lowest Price"));
-      tr.appendChild(th_name);
-      tr.appendChild(th_price);
-      table.appendChild(tr);
+      var iTable = document.getElementById("iTable");
 
       // Grid
       var row = document.createElement("div");
@@ -224,7 +191,7 @@
             tr.setAttribute("class", "info");
             tr.appendChild(td_name);
             tr.appendChild(td_price);
-            table.appendChild(tr);
+            iTable.appendChild(tr);
           }
         }
       }
@@ -232,11 +199,6 @@
       // Grid
       var grid = document.getElementById("grid");
       grid.appendChild(row);
-
-      // Header
-      header_col.appendChild(table);
-      header_row.appendChild(header_col);
-      header.appendChild(header_row);
     });
   }
   </script>
