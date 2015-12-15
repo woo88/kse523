@@ -30,7 +30,7 @@
         <header class="j38">
           <div class="container-fluid" id="header"></div>
         </header>
-        <h2>Related Items</h2>
+        <!-- <h2>Related Items</h2> -->
         <div class="container-fluid" id="grid"></div>
       </article>
       <div id="test"></div>
@@ -115,17 +115,17 @@
     var id = getParameter('id');
     document.getElementById("test").innerHTML = id;
     var itemArr = [];
-    var header_row = document.createElement("div");
-    header_row = setAttribute("class", "row");
-    var header = document.getElementById("header");
+    // var header_row = document.createElement("div");
+    // header_row = setAttribute("class", "row");
+    // var header = document.getElementById("header");
 
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
 
       var i;
-      var header_col = document.createElement("div");
-      header_col.setAttribute("class", "col-xs-6 col-md-6");
+      // var header_col = document.createElement("div");
+      // header_col.setAttribute("class", "col-xs-6 col-md-6");
       for(i = 0; i < actual_JSON.length; i++) {
         if(id == actual_JSON[i].fashionId) {
           itemArr = actual_JSON[i].items;
