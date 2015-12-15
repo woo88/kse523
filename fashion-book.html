@@ -1,217 +1,290 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fashionbook Information | KSE523</title>
+  <meta name="robots" content="noimageindex">
+  <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <meta name="description" content="SNSs-based Fashion Sharing Service"/>
   <meta name="author" content="Jongseong Woo, Hyeongseok Lee"/>
   <meta name="keywords" content="fashion, clothes, shopping, SNSs, share"/>
   <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
 
-  <title>KSE523 | Fashion Book Information</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <!-- Default CSS -->
-  <link rel="stylesheet" type="text/css" href="css/default.css"/>
-
-  <!-- Grid Layout CSS -->
-  <link rel="stylesheet" type="text/css" href="css/grid.css"/>
-
-  <!-- Fashion Book Information CSS -->
-  <link rel="stylesheet" type="text/css" href="css/information.css"/>
-
-  <!-- jQuery for Toggle Search JS -->
-  <script src="js/jquery-2.1.4.min.js"></script>
-
-  <!-- Grid Layout JS -->
-  <script src="js/modernizr.custom.js"></script>
-  <script src="js/masonry.pkgd.min.js"></script>
-  <script src="js/imagesloaded.js"></script>
-  <script src="js/classie.js"></script>
-  <script src="js/AnimOnScroll.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/2default.css"/>
 </head>
-
 <body>
-<div class="container">
-  <!-- Fixed Header -->
-  <header>
-      <div id="jquery-script-menu">
-          <!-- Login Button -->
-          <div class="login">
-              <ul>
-                  <li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
-              </ul>
+  <span id="react-root">
+    <main class="j28" role="main">
+      <article class="i38">
+        <header class="j38">
+          <div class="container-fluid" id="header">
+            <div class="row" style="max-width:1135px;">
+              <div class="col-xs-5 col-md-6">
+                <a href="#" class="thumbnail" id="fImage"></a>
+              </div>
+              <div class="col-xs-5 col-md-6">
+                <table class="table">
+                  <col width="75%">
+                  <col width="25%">
+                  <thead>
+                    <tr>
+                      <th>Item Name</th>
+                      <th>Lowest Price</th>
+                    </tr>
+                  </thead>
+                  <tbody id="iTbody"></tbody>
+                </table>
+              </div>
+            </div>
           </div>
-
-          <!-- Main Title -->
-          <div class="title">
-              <a href="fashion-book-list.html"><h1>Fashionbook</h1></a>
+        </header>
+        <div class="container-fluid" id="grid"></div>
+      </article>
+    </main>
+    <nav class="h28" role="navigation">
+      <div class="r79" style="max-width:935px;">
+        <a class="s79 u77" href="/index.html"><h1>Fashionbook</h1></a>
+        <div class="t79">
+          <div class="q79 p0a">
+            <!-- Toggle Search -->
+            <a class="searchlink" id="searchlink">Search
+              <div class="searchform">
+                <form id="search">
+                  <input type="text" class="s" id="s" placeholder="Keyword Search">
+                  <button type="submit" class="sbtn"></button>
+                </form>
+              </div>
+            </a>
           </div>
-
-          <!-- Top Navigation -->
-          <div class="jquery-script-center">
-              <nav class="codrops-demos">
-                  <a href="fashion-book-list.html">Daily Fashion</a>
-
-                  <!-- Toggle Search -->
-                  <a class="searchlink" id="searchlink">Search
-                      <div class="searchform">
-                          <form id="search">
-                              <input type="text" class="s" id="s" placeholder="Keyword Search">
-                              <button type="submit" class="sbtn"></button>
-                          </form>
-                      </div>
-                  </a>
-
-                  <a href="my-fashion-book.html">My Fashion Book</a>
-              </nav>
-          </div>
+          <a class="n79" href="my-fashion-book.html">
+            <button type="button" class="btn btn-primary">My Fashionbook</button>
+          </a>
+          <a class="n79" href="signin.html">
+            <button type="button" class="btn btn-success">Login</button>
+          </a>
+        </div>
       </div>
-  </header>
+    </nav>
+    <footer class="g28" role="contentinfo">
+      <div class="n09 p09" style="max-width:935px;">
+        <span class="s09">© 2015 Fashionbook</span>
+      </div>
+    </footer>
+  </span>
 
-  <!-- Fashion Book Information -->
-  <div class="codi_detail">
-      <ul>
-          <li>SWEATSHIRT: 73,000 (KRW)</li>
-          <br>
-          <li>CAP: 38,000 (KRW)</li>
-          <br>
-          <li>PANTS: 55,000 (KRW)</li>
-          <br>
-          <li>BAG: 31,500 (KRW)</li>
-          <br>
-          <li>SNEAKER: 26,950 (KRW)</li>
-          <br>
-      </ul>
-      <img src="images/sample_codi.png" width="550px">
-  </div>
+  <!-- Toggle Search JS -->
+  <script type="text/javascript">
+  $(function() {
+    var $searchlink = $('#searchlink');
 
-  <!-- Related Item -->
-  <p>
+    /*// hover effect
+    $searchlink.on('mouseover', function(){
+      $(this).addClass('open');
+    }).on('mouseout', function(){
+      $(this).removeClass('open');
+    });*/
 
-  <h1>RELATED ITEM</h1></p>
-
-  <!-- Grid Layout -->
-  <ul class="grid effect-3" id="grid">
-    <li><a href="fashion-item.html"><img src="images/sample_sweatshirt.jpg">
-
-      <p>SWEATSHIRT</p></a>
-
-      <p>20 likes</p>
-      <img src="images/unlike_btn.png" height="25" alt="like"/>
-    </li>
-    <li><a href="#"><img src="images/sample_cap.jpg">
-
-      <p>CAP</p></a>
-
-      <p>14 likes</p>
-      <img src="images/like_btn.png" height="25" alt="like"/>
-    </li>
-    <li><a href="#"><img src="images/sample_pants.jpg">
-
-      <p>PANTS</p></a>
-
-      <p>34 likes</p>
-      <img src="images/unlike_btn.png" height="25" alt="like"/>
-    </li>
-    <li><a href="#"><img src="images/sample_bag.jpg">
-
-      <p>BAG</p></a>
-
-      <p>17 likes</p>
-      <img src="images/like_btn.png" height="25" alt="like"/>
-    </li>
-    <li><a href="#"><img src="images/sample_sneaker.jpg">
-
-      <p>SNEAKER</p></a>
-
-      <p>0 likes</p>
-      <img src="images/like_btn.png" height="25" alt="like"/>
-    </li>
-  </ul>
-</div>
-
-<!-- Grid Layout JS -->
-<script>
-// new AnimOnScroll( document.getElementById( 'grid' ), {
-//     minDuration : 0.4,
-//     maxDuration : 0.7,
-//     viewportFactor : 0.2
-// });
-</script>
-
-<!-- Toggle Search JS -->
-<script type="text/javascript">
-$(function() {
-  var $searchlink = $('#searchlink');
-
-  /*// hover effect
-  $searchlink.on('mouseover', function(){
-    $(this).addClass('open');
-  }).on('mouseout', function(){
-    $(this).removeClass('open');
-  });*/
-
-  // on click effect
-  $searchlink.on('click', function(e){
-    var target = e ? e.target : window.event.srcElement;
-  
-    if($(target).attr('id') == 'searchlink') {
-      if($(this).hasClass('open')) {
-        $(this).removeClass('open');
-      } else {
-        $(this).addClass('open');
-      }
-    }
-  });
-});
-</script>
-
-<script type="text/javascript">
-function getParam() {
-  var item_id = getParameter('id'); // 9074178114
-
-  document.getElementById('test').innerHTML = item_id;
-}
-</script>
-
-<!-- Load JSON file -->
-<script>
-function loadJSON(callback) {   
-
-  var xobj = new XMLHttpRequest();
-      xobj.overrideMimeType("application/json");
-  xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);  
-}
-
-init();
-
-function init() {
-  var id = getParameter('id');
-
-  loadJSON(function(response) {
-    // Parse JSON string into object
-    var actual_JSON = JSON.parse(response);
+    // on click effect
+    $searchlink.on('click', function(e){
+      var target = e ? e.target : window.event.srcElement;
     
-    var out = "";
-    var i;
-    for(i = 0; i < actual_JSON.length; i++) {
-      if(actual_JSON[i].productId == id) {
-        out += '<a href="' + actual_JSON[i].link + '">' + 
-        actual_JSON[i].title + '</a><br>';
+      if($(target).attr('id') == 'searchlink') {
+        if($(this).hasClass('open')) {
+          $(this).removeClass('open');
+        } else {
+          $(this).addClass('open');
+        }
+      }
+    });
+  });
+  </script>
+
+  <!-- Read URL GET parameters -->
+  <script type="text/javascript">
+  function getParameter(theParameter) { 
+    var params = window.location.search.substr(1).split('&');
+   
+    for (var i = 0; i < params.length; i++) {
+      var p=params[i].split('=');
+      if (p[0] == theParameter) {
+        return decodeURIComponent(p[1]);
       }
     }
-    // document.getElementById("after").innerHTML = out;
-  });
-}
-</script>
+    return false;
+  }
+  </script>
+
+  <!-- Load JSON file -->
+  <script>
+  function loadJSON(callback) {
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  function loadJSON2(callback) {
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/items.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  init();
+
+  function init() {
+    var id = getParameter('id');
+    // document.getElementById("test").innerHTML = id;
+    var itemArr = [];
+
+    loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+
+      var i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        if(id == actual_JSON[i].fashionId) {
+          itemArr = actual_JSON[i].items;
+          var img = document.createElement("img");
+          img.setAttribute("src", actual_JSON[i].image);
+          var a = document.getElementById("fImage");
+          a.appendChild(img);
+        }
+      }
+    });
+
+    loadJSON2(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+      
+      var out = "";
+      var i;
+      var j;
+      var n = 0;
+
+      // Header
+      var iTbody = document.getElementById("iTbody");
+
+      // Grid
+      var h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode("Related Items"));
+      var grid = document.getElementById("grid");
+      grid.appendChild(h2);
+      var row;
+      for(i = 0; i < itemArr.length; i++) {
+        for(j = 0; j < actual_JSON.length; j++) {
+          if(actual_JSON[j].productId == itemArr[i]) {
+            // Grid
+            if((i % 3) == 0) {
+              if(i == 0) {
+                row = document.createElement("div");
+                row.setAttribute("class", "row");
+                var col = document.createElement("div");
+                col.setAttribute("class", "col-xs-4 col-md-4");
+                var a = document.createElement("a");
+                a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
+                a.setAttribute("class", "thumbnail");
+                var img = document.createElement("img");
+                img.setAttribute("src", actual_JSON[j].image);
+                a.appendChild(img);
+                col.appendChild(a);
+                row.appendChild(col);
+              } else {
+                grid.appendChild(row);
+                row = document.createElement("div");
+                row.setAttribute("class", "row");
+                var col = document.createElement("div");
+                col.setAttribute("class", "col-xs-4 col-md-4");
+                var a = document.createElement("a");
+                a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
+                a.setAttribute("class", "thumbnail");
+                var img = document.createElement("img");
+                img.setAttribute("src", actual_JSON[j].image);
+                a.appendChild(img);
+                col.appendChild(a);
+                row.appendChild(col);
+              }
+            } else {
+              var col = document.createElement("div");
+              col.setAttribute("class", "col-xs-4 col-md-4");
+              var a = document.createElement("a");
+              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
+              a.setAttribute("class", "thumbnail");
+              var img = document.createElement("img");
+              img.setAttribute("src", actual_JSON[j].image);
+              a.appendChild(img);
+              col.appendChild(a);
+              row.appendChild(col);
+            }
+
+            // Header
+            if((i % 3) == 0) {
+              var td_name = document.createElement("td");
+              td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+              var td_price = document.createElement("td");
+              td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+              var tr = document.createElement("tr");
+              tr.setAttribute("class", "success");
+              tr.appendChild(td_name);
+              tr.appendChild(td_price);
+              iTbody.appendChild(tr);
+            } else if((i % 3) == 1) {
+              var td_name = document.createElement("td");
+              td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+              var td_price = document.createElement("td");
+              td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+              var tr = document.createElement("tr");
+              tr.setAttribute("class", "danger");
+              tr.appendChild(td_name);
+              tr.appendChild(td_price);
+              iTbody.appendChild(tr);
+            } else {
+              var td_name = document.createElement("td");
+              td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+              var td_price = document.createElement("td");
+              td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+              var tr = document.createElement("tr");
+              tr.setAttribute("class", "info");
+              tr.appendChild(td_name);
+              tr.appendChild(td_price);
+              iTbody.appendChild(tr);
+            }
+
+            break;
+          }
+        }
+      }
+
+      // Grid
+      grid.appendChild(row);
+    });
+  }
+  </script>
 </body>
 </html>

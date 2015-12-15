@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="SNSs-based Fashion Sharing Service"/>
+  <meta name="author" content="Jongseong Woo, Hyeongseok Lee"/>
+  <meta name="keywords" content="fashion, clothes, shopping, SNSs, share"/>
+  <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+  <title>Fashion Book List | KSE523</title>
+
+  <!-- Default CSS -->
+  <link rel="stylesheet" type="text/css" href="css/default.css"/>
+
+  <!-- Grid Layout CSS -->
+  <link rel="stylesheet" type="text/css" href="css/grid.css"/>
+
+  <!-- jQuery for Toggle Search JS -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+
+  <!-- Grid Layout JS -->
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+  <script src="js/imagesloaded.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/AnimOnScroll.js"></script>
+</head>
+
+<body>
+<div class="container" id="grid-list">
+  <!-- Fixed Header -->
+  <header>
+    <div id="jquery-script-menu">
+      <!-- Login Button -->
+      <div class="login">
+        <ul>
+          <li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Main Title -->
+      <div class="title">
+        <a href="fashion-book-list.html"><h1>Fashionbook</h1></a>
+      </div>
+
+      <!-- Top Navigation -->
+      <div class="jquery-script-center">
+        <nav class="codrops-demos">
+          <a href="fashion-book-list.html">Daily Fashion</a>
+
+          <!-- Toggle Search -->
+          <a class="searchlink" id="searchlink">Search
+            <div class="searchform">
+              <form id="search">
+                <input type="text" class="s" id="s" placeholder="Keyword Search">
+                <button type="submit" class="sbtn"></button>
+              </form>
+            </div>
+          </a>
+
+          <a href="my-fashion-book.html">My Fashion Book</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Grid Layout -->
+  <ul class="grid effect-3" id="grid">
+  </ul>
+</div>
+
+
+
+<!-- Toggle Search JS -->
+<script type="text/javascript">
+  $(function() {
+    var $searchlink = $('#searchlink');
+
+    /*// hover effect
+    $searchlink.on('mouseover', function(){
+      $(this).addClass('open');
+    }).on('mouseout', function(){
+      $(this).removeClass('open');
+    });*/
+
+    // on click effect
+    $searchlink.on('click', function(e){
+      var target = e ? e.target : window.event.srcElement;
+
+      if($(target).attr('id') == 'searchlink') {
+        if($(this).hasClass('open')) {
+          $(this).removeClass('open');
+        } else {
+          $(this).addClass('open');
+        }
+      }
+    });
+  });
+</script>
+
+<script>
+  function loadJSON(callback) {   
+
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  init();
+
+  function init() {
+    loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+      
+      var out = "";
+      var i;
+      var ul = document.createElement('ul');
+      ul.setAttribute('class', 'grid effect-3');
+      ul.setAttribute('id', 'grid');
+
+      for(i = 0; i < actual_JSON.length; i++) {
+        // out += '<a href="' + actual_JSON[i].link + '">' + 
+        // actual_JSON[i].title + '</a><br>';
+
+        out += '<li><a href="fashion-book.html?id=' + actual_JSON[i].fashionId +'"><img src="' + actual_JSON[i].image + '"></a><p>title</p><p>' + actual_JSON[i].likes + ' likes</p></li>';
+
+        var img = document.createElement("img");
+        img.setAttribute('src', actual_JSON[i].image);
+
+        var a = document.createElement('a');
+        a.setAttribute('href', 'fashion-book.html?id=' + actual_JSON[i].fashionId);
+        a.appendChild(img);
+
+        var li = document.createElement("li");
+        li.appendChild(a);
+
+        var likes = document.createElement('p');
+        var node = document.createTextNode(actual_JSON[i].likes + ' likes');
+        likes.appendChild(node);
+        li.appendChild(likes);
+
+        // var ul = document.getElementById("grid");
+        ul.appendChild(li);
+      }
+      document.getElementById("grid").innerHTML = out;
+    });
+  }
+</script>
+
+<!-- Grid Layout JS -->
+<script>
+  // new AnimOnScroll( document.getElementById( 'grid' ), {
+  //     minDuration : 0.4,
+  //     maxDuration : 0.7,
+  //     viewportFactor : 0.2
+  // });
+</script>
+</body>
+</html>

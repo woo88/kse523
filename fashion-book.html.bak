@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="SNSs-based Fashion Sharing Service"/>
+  <meta name="author" content="Jongseong Woo, Hyeongseok Lee"/>
+  <meta name="keywords" content="fashion, clothes, shopping, SNSs, share"/>
+  <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+  <title>KSE523 | Fashion Book Information</title>
+
+  <!-- Default CSS -->
+  <link rel="stylesheet" type="text/css" href="css/default.css"/>
+
+  <!-- Grid Layout CSS -->
+  <link rel="stylesheet" type="text/css" href="css/grid.css"/>
+
+  <!-- Fashion Book Information CSS -->
+  <link rel="stylesheet" type="text/css" href="css/information.css"/>
+
+  <!-- jQuery for Toggle Search JS -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+
+  <!-- Grid Layout JS -->
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/masonry.pkgd.min.js"></script>
+  <script src="js/imagesloaded.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/AnimOnScroll.js"></script>
+</head>
+
+<body>
+<div class="container">
+  <!-- Fixed Header -->
+  <header>
+      <div id="jquery-script-menu">
+          <!-- Login Button -->
+          <div class="login">
+              <ul>
+                  <li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
+              </ul>
+          </div>
+
+          <!-- Main Title -->
+          <div class="title">
+              <a href="fashion-book-list.html"><h1>Fashionbook</h1></a>
+          </div>
+
+          <!-- Top Navigation -->
+          <div class="jquery-script-center">
+              <nav class="codrops-demos">
+                  <a href="fashion-book-list.html">Daily Fashion</a>
+
+                  <!-- Toggle Search -->
+                  <a class="searchlink" id="searchlink">Search
+                      <div class="searchform">
+                          <form id="search">
+                              <input type="text" class="s" id="s" placeholder="Keyword Search">
+                              <button type="submit" class="sbtn"></button>
+                          </form>
+                      </div>
+                  </a>
+
+                  <a href="my-fashion-book.html">My Fashion Book</a>
+              </nav>
+          </div>
+      </div>
+  </header>
+
+  <!-- Fashion Book Information -->
+  <div class="codi_detail">
+      <ul>
+          <li>SWEATSHIRT: 73,000 (KRW)</li>
+          <br>
+          <li>CAP: 38,000 (KRW)</li>
+          <br>
+          <li>PANTS: 55,000 (KRW)</li>
+          <br>
+          <li>BAG: 31,500 (KRW)</li>
+          <br>
+          <li>SNEAKER: 26,950 (KRW)</li>
+          <br>
+      </ul>
+      <img src="images/sample_codi.png" width="550px">
+  </div>
+
+  <!-- Related Item -->
+  <p>
+
+  <h1>RELATED ITEM</h1></p>
+
+  <!-- Grid Layout -->
+  <ul class="grid effect-3" id="grid">
+    <li><a href="fashion-item.html"><img src="images/sample_sweatshirt.jpg">
+
+      <p>SWEATSHIRT</p></a>
+
+      <p>20 likes</p>
+      <img src="images/unlike_btn.png" height="25" alt="like"/>
+    </li>
+    <li><a href="#"><img src="images/sample_cap.jpg">
+
+      <p>CAP</p></a>
+
+      <p>14 likes</p>
+      <img src="images/like_btn.png" height="25" alt="like"/>
+    </li>
+    <li><a href="#"><img src="images/sample_pants.jpg">
+
+      <p>PANTS</p></a>
+
+      <p>34 likes</p>
+      <img src="images/unlike_btn.png" height="25" alt="like"/>
+    </li>
+    <li><a href="#"><img src="images/sample_bag.jpg">
+
+      <p>BAG</p></a>
+
+      <p>17 likes</p>
+      <img src="images/like_btn.png" height="25" alt="like"/>
+    </li>
+    <li><a href="#"><img src="images/sample_sneaker.jpg">
+
+      <p>SNEAKER</p></a>
+
+      <p>0 likes</p>
+      <img src="images/like_btn.png" height="25" alt="like"/>
+    </li>
+  </ul>
+</div>
+
+<!-- Grid Layout JS -->
+<script>
+// new AnimOnScroll( document.getElementById( 'grid' ), {
+//     minDuration : 0.4,
+//     maxDuration : 0.7,
+//     viewportFactor : 0.2
+// });
+</script>
+
+<!-- Toggle Search JS -->
+<script type="text/javascript">
+$(function() {
+  var $searchlink = $('#searchlink');
+
+  /*// hover effect
+  $searchlink.on('mouseover', function(){
+    $(this).addClass('open');
+  }).on('mouseout', function(){
+    $(this).removeClass('open');
+  });*/
+
+  // on click effect
+  $searchlink.on('click', function(e){
+    var target = e ? e.target : window.event.srcElement;
+  
+    if($(target).attr('id') == 'searchlink') {
+      if($(this).hasClass('open')) {
+        $(this).removeClass('open');
+      } else {
+        $(this).addClass('open');
+      }
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+function getParam() {
+  var item_id = getParameter('id'); // 9074178114
+
+  document.getElementById('test').innerHTML = item_id;
+}
+</script>
+
+<!-- Load JSON file -->
+<script>
+function loadJSON(callback) {   
+
+  var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+  xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
+  xobj.onreadystatechange = function () {
+    if (xobj.readyState == 4 && xobj.status == "200") {
+      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+      callback(xobj.responseText);
+    }
+  };
+  xobj.send(null);  
+}
+
+init();
+
+function init() {
+  var id = getParameter('id');
+
+  loadJSON(function(response) {
+    // Parse JSON string into object
+    var actual_JSON = JSON.parse(response);
+    
+    var out = "";
+    var i;
+    for(i = 0; i < actual_JSON.length; i++) {
+      if(actual_JSON[i].productId == id) {
+        out += '<a href="' + actual_JSON[i].link + '">' + 
+        actual_JSON[i].title + '</a><br>';
+      }
+    }
+    // document.getElementById("after").innerHTML = out;
+  });
+}
+</script>
+</body>
+</html>
