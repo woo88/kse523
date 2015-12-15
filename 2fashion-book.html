@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>KSE523 | Fashion Book Information</title>
+  <meta name="robots" content="noimageindex">
+  <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="description" content="SNSs-based Fashion Sharing Service"/>
+  <meta name="author" content="Jongseong Woo, Hyeongseok Lee"/>
+  <meta name="keywords" content="fashion, clothes, shopping, SNSs, share"/>
+  <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- Default CSS -->
+  <link rel="stylesheet" type="text/css" href="css/2default.css"/>
+</head>
+<body>
+  <span id="react-root">
+    <main class="j28" role="main">
+      <article class="i38">
+        <header class="j38">article header</header>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="images/7.jpg" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="images/7.jpg" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="images/7.jpg" alt="...">
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="images/7.jpg" alt="...">
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <nav class="h28" role="navigation">navigation</nav>
+    <footer class="g28" role="contentinfo">footer</footer>
+  </span>
+
+  <!-- Toggle Search JS -->
+  <script type="text/javascript">
+  $(function() {
+    var $searchlink = $('#searchlink');
+
+    /*// hover effect
+    $searchlink.on('mouseover', function(){
+      $(this).addClass('open');
+    }).on('mouseout', function(){
+      $(this).removeClass('open');
+    });*/
+
+    // on click effect
+    $searchlink.on('click', function(e){
+      var target = e ? e.target : window.event.srcElement;
+    
+      if($(target).attr('id') == 'searchlink') {
+        if($(this).hasClass('open')) {
+          $(this).removeClass('open');
+        } else {
+          $(this).addClass('open');
+        }
+      }
+    });
+  });
+  </script>
+
+  <!-- Read URL GET parameters -->
+  <script type="text/javascript">
+  function getParameter(theParameter) { 
+    var params = window.location.search.substr(1).split('&');
+
+    var strArr = [];
+    for (var i = 0; i < params.length; i++) {
+      var p=params[i].split('=');
+      if (p[0] == theParameter) {
+        strArr.push(decodeURIComponent(p[1]));
+      }
+    }
+
+    if(strArr.length > 0) {
+      return strArr;
+    } else {
+      return false;
+    }
+  }
+  </script>
+
+  <!-- Load JSON file -->
+  <script>
+  function loadJSON(callback) {
+    var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+    xobj.open('GET', 'data/items.json', true); // Replace 'my_data' with the path to your file
+    xobj.onreadystatechange = function () {
+      if (xobj.readyState == 4 && xobj.status == "200") {
+        // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);  
+  }
+
+  init();
+
+  function init() {
+    var idArr = getParameter('id');
+
+    loadJSON(function(response) {
+      // Parse JSON string into object
+      var actual_JSON = JSON.parse(response);
+      
+      var out = "";
+      var i;
+      var j;
+      var n = 0;
+      var row = document.createElement("div");
+      row.setAttribute("class", "row");
+      for(i = 0; i < idArr.length; i++) {
+        for(j = 0; j < actual_JSON.length; j++) {
+          if(actual_JSON[j].productId == idArr[i]) {
+            // "9074178114", "9018713502"
+            if(idArr.length <= 3) {
+              var col = document.createElement("div");
+              col.setAttribute("class", "col-xs-6 col-md-4");
+              var a = document.createElement("a");
+              a.setAttribute("href", actual_JSON[j].link);
+              a.setAttribute("class", "thumbnail");
+              var img = document.createElement("img");
+              img.setAttribute("src", actual_JSON[j].image);
+              a.appendChild(img);
+              col.appendChild(a);
+              row.appendChild(col);
+            } else {
+
+            }
+          }
+        }
+      }
+      var grid = document.getElementById("container-fluid");
+      grid.appendChild(row);
+    });
+  }
+  </script>
+</body>
+</html>

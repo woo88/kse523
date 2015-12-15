@@ -1,0 +1,110 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+}
+
+article, div, footer, header, main, nav, section, #react-root {
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      border: 0 solid #000;
+      box-sizing: border-box;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      margin: 0;
+      padding: 0;
+      position: relative;
+}
+
+.j28, .g28 {
+    background-color: #fafafa;
+}
+
+.j28 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+@media (min-width: 736px)
+.i38 {
+    box-sizing: content-box;
+    padding: 40px 20px 0;
+    width: calc(100% - 40px);
+}
+
+.i38 {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin: 0 auto 30px;
+    max-width: 1135px;
+    width: 100%;
+}
+
+@media (min-width: 736px)
+.j38, .k38 {
+    padding: 20px 0;
+}
+
+@media (min-width: 736px)
+.j38 {
+    margin-bottom: 45px;
+}
+
+.j38, .k38 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.h28 {
+    border-bottom-color: #edeeee;
+    border-bottom-width: 1px;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+}
+
+.g28, .h28 {
+    padding: 0 20px;
+}
+
+.g28 {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+    -ms-flex-order: 3;
+    order: 3;
+}
+
+/*grid*/
+.row {
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -webkit-flex-direction:row;
+    -ms-flex-direction:row;
+    flex-direction:row
+}
