@@ -44,7 +44,7 @@
                     <button type="button" class="btn btn-default">Undo</button>
                     <button type="button" class="btn btn-default">Redo</button>
                   </div>
-                  <div class="btn-group" id="saveBtn">
+                  <div class="btn-group" id="saveBtn" style="margin-top:50px;">
                     <button type="button" class="btn btn-danger">Reset</button>
                     <button type="button" class="btn btn-success">Save</button>
                   </div>
@@ -141,7 +141,7 @@
 
       // Grid - Related Items
       var h2 = document.createElement("h2");
-      h2.appendChild(document.createTextNode("Related Items"));
+      h2.appendChild(document.createTextNode("Tag: " + query));
       var grid = document.getElementById("grid");
       grid.appendChild(h2);
       var row;
