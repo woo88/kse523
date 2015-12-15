@@ -166,45 +166,45 @@
           // Head Table
           var iTbody = document.getElementById("iTbody");
           // Product Name
-          var tr = document.createElement("tr");
-          tr.setAttribute("class", "success");
-          var td = document.createElement("td");
-          td.appendChild(document.createTextNode("Product Name:");
-          tr.appendChild(td);
-          td = document.createElement("td");
-          td.appendChild(document.createTextNode(actual_JSON[i].title));
-          tr.appendChild(td);
-          iTbody.appendChild(tr);
+          var tr1 = document.createElement("tr");
+          tr1.setAttribute("class", "success");
+          var td1 = document.createElement("td");
+          td1.appendChild(document.createTextNode("Product Name:");
+          tr1.appendChild(td1);
+          var td2 = document.createElement("td");
+          td2.appendChild(document.createTextNode(actual_JSON[i].title));
+          tr1.appendChild(td2);
+          iTbody.appendChild(tr1);
           // Lowest Price
-          var tr = document.createElement("tr");
-          tr.setAttribute("class", "danger");
-          var td = document.createElement("td");
-          td.appendChild(document.createTextNode("Lowest Price:");
-          tr.appendChild(td);
-          td = document.createElement("td");
-          td.appendChild(document.createTextNode(actual_JSON[i].lprice));
-          tr.appendChild(td);
-          iTbody.appendChild(tr);
+          var tr2 = document.createElement("tr");
+          tr2.setAttribute("class", "danger");
+          var td21 = document.createElement("td");
+          td21.appendChild(document.createTextNode("Lowest Price:");
+          tr2.appendChild(td21);
+          var td22 = document.createElement("td");
+          td22.appendChild(document.createTextNode(actual_JSON[i].lprice));
+          tr2.appendChild(td22);
+          iTbody.appendChild(tr2);
           // Mall Name
-          var tr = document.createElement("tr");
-          tr.setAttribute("class", "info");
-          var td = document.createElement("td");
-          td.appendChild(document.createTextNode("Mall Name:");
-          tr.appendChild(td);
-          td = document.createElement("td");
-          td.appendChild(document.createTextNode(actual_JSON[i].mallname));
-          tr.appendChild(td);
-          iTbody.appendChild(tr);
+          var tr3 = document.createElement("tr");
+          tr3.setAttribute("class", "info");
+          var td31 = document.createElement("td");
+          td31.appendChild(document.createTextNode("Mall Name:");
+          tr3.appendChild(td31);
+          var td32 = document.createElement("td");
+          td32.appendChild(document.createTextNode(actual_JSON[i].mallname));
+          tr3.appendChild(td32);
+          iTbody.appendChild(tr3);
           // Tag
-          var tr = document.createElement("tr");
-          tr.setAttribute("class", "warning");
-          var td = document.createElement("td");
-          td.appendChild(document.createTextNode("Tag:");
-          tr.appendChild(td);
-          var td = document.createElement("td");
-          td.appendChild(document.createTextNode(actual_JSON[i].query));
-          tr.appendChild(td);
-          iTbody.appendChild(tr);
+          var tr4 = document.createElement("tr");
+          tr4.setAttribute("class", "warning");
+          var td41 = document.createElement("td");
+          td41.appendChild(document.createTextNode("Tag:");
+          tr4.appendChild(td41);
+          var td42 = document.createElement("td");
+          td42.appendChild(document.createTextNode(actual_JSON[i].query));
+          tr4.appendChild(td42);
+          iTbody.appendChild(tr4);
 
           query = actual_JSON[i].query;
         }
