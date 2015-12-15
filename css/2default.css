@@ -102,18 +102,16 @@ article, div, footer, header, main, nav, section, #react-root {
     font-weight: 300;
 }
 .q79 a {
-    /*margin: 0.5em;*/
-    padding: 0.7em 1.1em;
-    border: 3px solid #6b7381;
-    color: #6b7381;
-    font-weight: 700;
+    background:#fafafa;border:solid 1px #edeeee;border-radius:15px;color:#818488;cursor:text;font-size:14px;font-weight:300;height:28px;left:0;padding:7px;text-align:center;top:0;width:215px
 }
 .q79 a:hover {
     opacity: 0.6;
     text-decoration: none;
+    background-color: rgba(1,151,171,1);
+    color: #fff;
 }
 /*Search*/
-.p0a{left:50%;margin-left:-183px;position:absolute;top:0}.j0a{left:11px;top:9px}.j0a,.l0a{position:absolute;z-index:2}.l0a{background:#fafafa;border:solid 1px #edeeee;border-radius:15px;color:#818488;cursor:text;font-size:14px;font-weight:300;height:28px;left:0;padding:7px;text-align:center;top:0;width:215px}.m0a{display:inline;left:-5px}.n0a{margin-right:6px;vertical-align:baseline}.n0a,.o0a{display:inline-block}.o0a{max-width:140px;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom;white-space:nowrap}.q0a{border-radius:15px;border:solid 1px #edeeee;font-size:14px;height:20px;outline:none;padding:3px 10px 3px 26px;width:178px;z-index:2}.k0a{bottom:0;left:0;position:fixed;right:0;top:0;z-index:1}.r0a{left:200px;position:absolute;top:14px;z-index:3}
+.p0a{left:50%;margin-left:-233px;position:absolute;top:0}.j0a{left:11px;top:9px}.j0a,.l0a{position:absolute;z-index:2}.l0a{background:#fafafa;border:solid 1px #edeeee;border-radius:15px;color:#818488;cursor:text;font-size:14px;font-weight:300;height:28px;left:0;padding:7px;text-align:center;top:0;width:215px}.m0a{display:inline;left:-5px}.n0a{margin-right:6px;vertical-align:baseline}.n0a,.o0a{display:inline-block}.o0a{max-width:140px;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom;white-space:nowrap}.q0a{border-radius:15px;border:solid 1px #edeeee;font-size:14px;height:20px;outline:none;padding:3px 10px 3px 26px;width:178px;z-index:2}.k0a{bottom:0;left:0;position:fixed;right:0;top:0;z-index:1}.r0a{left:200px;position:absolute;top:14px;z-index:3}
 
 .q0a{border-radius:15px;border:solid 1px #edeeee;font-size:14px;height:20px;outline:none;padding:3px 10px 3px 26px;width:178px;z-index:2}
 
@@ -182,7 +180,7 @@ article, div, footer, header, main, nav, section, #react-root {
     height: 50px;
     line-height: 40px;
     top: 85px;
-    left: -200px;
+    left: -100px;
     padding: 0 15px;
     cursor: default;
 }
@@ -197,7 +195,7 @@ article, div, footer, header, main, nav, section, #react-root {
 }
 
 #s {
-    width: 470px;
+    width: 350px;
     height: 50px;
     background-color: rgba(1,151,171,1);
     padding: 8px 11px;
@@ -206,7 +204,7 @@ article, div, footer, header, main, nav, section, #react-root {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    font-size: 2em;
+    /*font-size: 2em;*/
 }
 
 .sbtn {
