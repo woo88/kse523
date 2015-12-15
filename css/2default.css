@@ -43,6 +43,8 @@ article, div, footer, header, main, nav, section, #react-root {
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
+
+    margin-top: 85px;
 }
 
 @media (min-width: 736px)
@@ -100,6 +102,16 @@ article, div, footer, header, main, nav, section, #react-root {
     -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1;
+
+    border-top: 5px solid #316594;
+    -moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+    z-index: 999999;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .g28 {
