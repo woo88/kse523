@@ -109,8 +109,8 @@
   init();
 
   function init() {
-    var fashionId = getParameter('id');
-    document.getElementById("test").innerHTML = fashionId;
+    var id = getParameter('id');
+    document.getElementById("test").innerHTML = id;
     var itemArr = [];
 
     loadJSON(function(response) {
@@ -119,7 +119,7 @@
 
       int i;
       for(i = 0; i < actual_JSON.length; i++) {
-        if(fashionId == actual_JSON[i].fashionId) {
+        if(id == actual_JSON[i].fashionId) {
           itemArr = actual_JSON[i].items;
         }
       }
