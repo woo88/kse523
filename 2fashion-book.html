@@ -38,8 +38,8 @@
               </div>
               <div class="col-xs-5 col-md-6">
                 <table class="table">
-                  <col width="70%">
-                  <col width="30%">
+                  <col width="75%">
+                  <col width="25%">
                   <thead>
                     <tr>
                       <th>Item Name</th>
@@ -182,6 +182,7 @@
       for(i = 0; i < itemArr.length; i++) {
         for(j = 0; j < actual_JSON.length; j++) {
           if(actual_JSON[j].productId == itemArr[i]) {
+            // Grid
             if((i % 3) == 0) {
               if(i == 0) {
                 row = document.createElement("div");
@@ -225,15 +226,27 @@
             }
 
             // Header
-            var td_name = document.createElement("td");
-            td_name.appendChild(document.createTextNode(actual_JSON[j].title));
-            var td_price = document.createElement("td");
-            td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
-            var tr = document.createElement("tr");
-            tr.setAttribute("class", "info");
-            tr.appendChild(td_name);
-            tr.appendChild(td_price);
-            iTbody.appendChild(tr);
+            if((i % 2) == 0) {
+              var td_name = document.createElement("td");
+              td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+              var td_price = document.createElement("td");
+              td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+              var tr = document.createElement("tr");
+              tr.setAttribute("class", "success");
+              tr.appendChild(td_name);
+              tr.appendChild(td_price);
+              iTbody.appendChild(tr);
+            } else {
+              var td_name = document.createElement("td");
+              td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+              var td_price = document.createElement("td");
+              td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+              var tr = document.createElement("tr");
+              tr.setAttribute("class", "info");
+              tr.appendChild(td_name);
+              tr.appendChild(td_price);
+              iTbody.appendChild(tr);
+            }
 
             break;
           }
