@@ -226,13 +226,23 @@
             }
 
             // Header
-            if((i % 2) == 0) {
+            if((i % 3) == 0) {
               var td_name = document.createElement("td");
               td_name.appendChild(document.createTextNode(actual_JSON[j].title));
               var td_price = document.createElement("td");
               td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
               var tr = document.createElement("tr");
               tr.setAttribute("class", "success");
+              tr.appendChild(td_name);
+              tr.appendChild(td_price);
+              iTbody.appendChild(tr);
+            } else if((i % 3) == 1) {
+              var td_name = document.createElement("td");
+              td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+              var td_price = document.createElement("td");
+              td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+              var tr = document.createElement("tr");
+              tr.setAttribute("class", "danger");
               tr.appendChild(td_name);
               tr.appendChild(td_price);
               iTbody.appendChild(tr);
