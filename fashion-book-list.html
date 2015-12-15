@@ -42,9 +42,9 @@
             <!-- Toggle Search -->
             <a class="searchlink" id="searchlink">Search
               <div class="searchform">
-                <form id="search">
-                  <input type="text" class="s" id="s" placeholder="Keyword Search">
-                  <button type="submit" class="sbtn"></button>
+                <form id="search" action="search.html">
+                  <input type="text" class="s" id="s" placeholder="Keyword Search" name="q">
+                  <button type="submit" class="sbtn" onclick="submitform()"></button>
                 </form>
               </div>
             </a>
@@ -165,6 +165,12 @@
       }
       grid.appendChild(row);
     });
+  }
+  </script>
+
+  <script type="text/javascript">
+  function submitform() {
+    document.forms["search"].submit();
   }
   </script>
 </body>
