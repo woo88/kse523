@@ -80,7 +80,7 @@
 
   <!-- Load JSON file -->
   <script>
-  function loadJSONN(callback) {
+  function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'data/fashionbooks.json', true); // Replace 'my_data' with the path to your file
@@ -93,7 +93,7 @@
     xobj.send(null);  
   }
 
-  function loadJSON(callback) {
+  function loadJSON2(callback) {
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'data/test.json', true); // Replace 'my_data' with the path to your file
@@ -113,52 +113,19 @@
     document.getElementById("test").innerHTML = id;
     var itemArr = [];
 
-    loadJSONN(function(responsee) {
-      // Parse JSON string into object
-      var actual_JSONN = JSON.parse(responsee);
-
-      int i;
-      for(i = 0; i < actual_JSONN.length; i++) {
-        if(id == actual_JSONN[i].fashionId) {
-          itemArr = actual_JSONN[i].items;
-        }
-      }
-    });
-
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
-      
-      var out = "";
-      var i;
-      var j;
-      var n = 0;
-      var row = document.createElement("div");
-      row.setAttribute("class", "row");
-      for(i = 0; i < itemArr.length; i++) {
-        for(j = 0; j < actual_JSON.length; j++) {
-          if(actual_JSON[j].productId == itemArr[i]) {
-            // "9074178114", "9018713502"
-            if(itemArr.length <= 3) {
-              var col = document.createElement("div");
-              col.setAttribute("class", "col-xs-6 col-md-4");
-              var a = document.createElement("a");
-              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
-              a.setAttribute("class", "thumbnail");
-              var img = document.createElement("img");
-              img.setAttribute("src", actual_JSON[j].image);
-              a.appendChild(img);
-              col.appendChild(a);
-              row.appendChild(col);
-            } else {
 
-            }
-          }
+      int i;
+      for(i = 0; i < actual_JSON.length; i++) {
+        if(id == actual_JSON[i].fashionId) {
+          itemArr = actual_JSON[i].items;
         }
       }
-      var grid = document.getElementById("grid");
-      grid.appendChild(row);
     });
+
+
   }
   </script>
 </body>
