@@ -164,49 +164,49 @@
           var a = document.getElementById("iImage");
           a.appendChild(img);
           // Head Table
-          // var iTbody = document.getElementById("iTbody");
-          // // Product Name
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "success");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Product Name:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].title));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
-          // // Lowest Price
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "danger");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Lowest Price:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].lprice));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
-          // // Mall Name
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "info");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Mall Name:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].mallname));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
-          // // Tag
-          // var tr = document.createElement("tr");
-          // tr.setAttribute("class", "warning");
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode("Tag:");
-          // tr.appendChild(td);
-          // var td = document.createElement("td");
-          // td.appendChild(document.createTextNode(actual_JSON[i].query));
-          // tr.appendChild(td);
-          // iTbody.appendChild(tr);
+          var iTbody = document.getElementById("iTbody");
+          // Product Name
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "success");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Product Name:");
+          tr.appendChild(td);
+          td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].title));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
+          // Lowest Price
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "danger");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Lowest Price:");
+          tr.appendChild(td);
+          td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].lprice));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
+          // Mall Name
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "info");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Mall Name:");
+          tr.appendChild(td);
+          td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].mallname));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
+          // Tag
+          var tr = document.createElement("tr");
+          tr.setAttribute("class", "warning");
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode("Tag:");
+          tr.appendChild(td);
+          var td = document.createElement("td");
+          td.appendChild(document.createTextNode(actual_JSON[i].query));
+          tr.appendChild(td);
+          iTbody.appendChild(tr);
 
-          // query = actual_JSON[i].query;
+          query = actual_JSON[i].query;
         }
       }
 
