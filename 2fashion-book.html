@@ -103,6 +103,7 @@
 
   function init() {
     var idArr = getParameter('id');
+    document.getElementById("test").innerHTML = idArr;
 
     loadJSON(function(response) {
       // Parse JSON string into object
@@ -117,13 +118,12 @@
       for(i = 0; i < idArr.length; i++) {
         for(j = 0; j < actual_JSON.length; j++) {
           if(actual_JSON[j].productId == idArr[i]) {
-            document.getElementById("test").innerHTML = idArr[i];
             // "9074178114", "9018713502"
             if(idArr.length <= 3) {
               var col = document.createElement("div");
               col.setAttribute("class", "col-xs-6 col-md-4");
               var a = document.createElement("a");
-              a.setAttribute("href", actual_JSON[j].link);
+              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[j].productId);
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[j].image);
