@@ -68,19 +68,13 @@
   function getParameter(theParameter) { 
     var params = window.location.search.substr(1).split('&');
 
-    var strArr = [];
     for (var i = 0; i < params.length; i++) {
       var p=params[i].split('=');
       if (p[0] == theParameter) {
-        strArr.push(decodeURIComponent(p[1]));
+        return decodeURIComponent(p[1]);
       }
     }
-
-    if(strArr.length > 0) {
-      return strArr;
-    } else {
-      return false;
-    }
+    return false;
   }
   </script>
 
