@@ -37,11 +37,14 @@
                 <a href="#" class="thumbnail" id="fImage"></a>
               </div>
               <div class="col-xs-6 col-md-6">
-                <table class="table" id="iTable">
-                  <tr>
-                    <th>Item Name</th>
-                    <th>Lowest Price</th>
-                  </tr>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Item Name</th>
+                      <th>Lowest Price</th>
+                    </tr>
+                  </thead>
+                  <tbody id="iTbody"></tbody>
                 </table>
               </div>
             </div>
@@ -158,7 +161,7 @@
       var n = 0;
 
       // Header
-      var iTable = document.getElementById("iTable");
+      var iTbody = document.getElementById("iTbody");
 
       // Grid
       var row = document.createElement("div");
@@ -191,7 +194,7 @@
             tr.setAttribute("class", "info");
             tr.appendChild(td_name);
             tr.appendChild(td_price);
-            iTable.appendChild(tr);
+            iTbody.appendChild(tr);
           }
         }
       }
