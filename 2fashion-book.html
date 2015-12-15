@@ -33,10 +33,10 @@
         <header class="j38">
           <div class="container-fluid" id="header">
             <div class="row">
-              <div class="col-xs-6 col-md-6">
+              <div class="col-xs-12 col-md-5">
                 <a href="#" class="thumbnail" id="fImage"></a>
               </div>
-              <div class="col-xs-6 col-md-6">
+              <div class="col-xs-12 col-md-5">
                 <table class="table">
                   <thead>
                     <tr>
@@ -200,7 +200,10 @@
       }
 
       // Grid
+      var h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode("Related Items"));
       var grid = document.getElementById("grid");
+      grid.appendChild(h2);
       grid.appendChild(row);
     });
   }
