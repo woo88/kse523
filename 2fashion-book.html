@@ -60,6 +60,7 @@
             </div>
           </div>
         </header>
+        <h2>Related Items</h2>
         <div class="container-fluid" id="grid"></div>
       </article>
       <div id="test"></div>
@@ -144,15 +145,27 @@
     var id = getParameter('id');
     document.getElementById("test").innerHTML = id;
     var itemArr = [];
+    var header_row = document.createElement("div");
+    header_row = setAttribute("class", "row");
 
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
 
       var i;
+      var header_col = document.createElement("div");
+      header_col.setAttribute("class", "col-xs-6 col-md-6");
       for(i = 0; i < actual_JSON.length; i++) {
         if(id == actual_JSON[i].fashionId) {
           itemArr = actual_JSON[i].items;
+          var img = document.createElement("img");
+          img.setAttribute("src", actual_JSON[i].image);
+          var a = document.createElement("a");
+          a.setAttribute("href", "#");
+          a.setAttribute("class", "thumbnail");
+          a.appendChild(img);
+          header_col.appendChild(a);
+          header_row.appendChild(header_col);
         }
       }
     });
@@ -165,12 +178,28 @@
       var i;
       var j;
       var n = 0;
+
+      // Header
+      var header_col = document.createElement("div");
+      header_col.setAttribute("class", "col-xs-6 col-md-6");
+      var table = document.createElement("table");
+      table.setAttribute("class", "table");
+      var tr = document.createElement("tr");
+      var th_name = document.createElement("th");
+      th_name.appendChild(document.createTextNode("Itme Name"));
+      var th_price = document.createElement("th");
+      th_price.appendChild(document.createTextNode("Lowest Price"));
+      tr.appendChild(th_name);
+      tr.appendChild(th_price);
+      table.appendChild(tr);
+
+      // Grid
       var row = document.createElement("div");
       row.setAttribute("class", "row");
       for(i = 0; i < itemArr.length; i++) {
         for(j = 0; j < actual_JSON.length; j++) {
           if(actual_JSON[j].productId == itemArr[i]) {
-            // "9074178114", "9018713502"
+            // Grid
             if(itemArr.length <= 3) {
               var col = document.createElement("div");
               col.setAttribute("class", "col-xs-6 col-md-4");
@@ -185,11 +214,29 @@
             } else {
 
             }
+
+            // Header
+            var td_name = document.createElement("td");
+            td_name.appendChild(document.createTextNode(actual_JSON[j].title));
+            var td_price = document.createElement("td");
+            td_price.appendChild(document.createTextNode(actual_JSON[j].lprice));
+            var tr = document.createElement("tr");
+            tr.appendChild(td_name);
+            tr.appendChild(td_price);
+            table.appendChild(tr);
           }
         }
       }
+
+      // Grid
       var grid = document.getElementById("grid");
       grid.appendChild(row);
+
+      // Header
+      header_col.appendChild(table);
+      header_row.appendChild(header_col);
+      var header = document.getElementById("header");
+      header.appendChild(header_row);
     });
   }
   </script>
