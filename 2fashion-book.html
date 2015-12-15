@@ -28,7 +28,7 @@
     <main class="j28" role="main">
       <article class="i38">
         <header class="j38">
-          <div class="container-fluid" id="h">
+          <div class="container-fluid" id="header">
             <div class="row">
               <div class="col-xs-6 col-md-6">
                 <a href="#" class="thumbnail"><img src="images/sample_codi.png"></a>
@@ -141,8 +141,8 @@
     document.getElementById("test").innerHTML = id;
     var itemArr = [];
     var header_row = document.createElement("div");
-    header_row = setAttribute("class", "row");
-    var header = document.getElementById("h");
+    // header_row = setAttribute("class", "row");
+    // var header = document.getElementById("header");
 
     loadJSON(function(response) {
       // Parse JSON string into object
