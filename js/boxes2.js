@@ -441,6 +441,6 @@ function getMouse(e) {
 
 // If you dont want to use <body onLoad='init()'>
 // You could uncomment this init() reference and place the script reference inside the body tag
-init2();
+//init();
 window.init2 = init2;
 })(window);
