@@ -41,6 +41,16 @@ $(document).ready(function(){
       width: 180, height:180
     });
   });
+
+  $("#undo").on("click", function() {
+    var layers = $("#canvas").getLayers();
+    // alert(layers.length);
+    $("#canvas").removeLayer(layers.length - 1).drawLayers();
+  });
+
+  $("#reset").on("click", function() {
+    $("#canvas").removeLayers().drawLayers();
+  });
 });
 </script>
 </head>
@@ -58,12 +68,9 @@ $(document).ready(function(){
               <div class="col-xs-5 col-md-6">
                 <div class="contatiner">
                   <div class="btn-group" id="editBtn">
-                    <button type="button" class="btn btn-default">Undo</button>
-                    <button type="button" class="btn btn-default">Redo</button>
-                  </div>
-                  <div class="btn-group" id="saveBtn" style="margin-top:20px;">
-                    <button type="button" class="btn btn-danger">Reset</button>
-                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-success" id="save">Save</button>
+                    <button type="button" class="btn btn-warning" id="undo">Undo</button>
+                    <button type="button" class="btn btn-danger" id="reset">Reset</button>
                   </div>
                 </div>
               </div>
