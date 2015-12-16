@@ -162,7 +162,7 @@
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[i].image);
               img.setAttribute("id", actual_JSON[i].productId);
-              img.setAttribute("onClick", "draw(this.id)");
+              img.setAttribute("onClick", "insert(this.id)");
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
@@ -178,7 +178,7 @@
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[i].image);
               img.setAttribute("id", actual_JSON[i].productId);
-              img.setAttribute("onClick", "draw(this.id)");
+              img.setAttribute("onClick", "insert(this.id)");
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
@@ -192,7 +192,7 @@
             var img = document.createElement("img");
             img.setAttribute("src", actual_JSON[i].image);
             img.setAttribute("id", actual_JSON[i].productId);
-            img.setAttribute("onClick", "draw(this.id)");
+            img.setAttribute("onClick", "insert(this.id)");
             a.appendChild(img);
             col.appendChild(a);
             row.appendChild(col);
@@ -215,8 +215,8 @@
 
 <!--Drawing my fashionbook-->
 <script>
-  function draw(img_id) {
-    var canvas = document.getElementById("canvas");
+  function insert(img_id) {
+    var canvas = document.getElementById("canvas2");
     var ctx = canvas.getContext("2d");
     var img = document.getElementById(img_id);
     ctx.drawImage(img, 10, 10, 150, 150);
