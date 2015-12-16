@@ -52,7 +52,9 @@ $(document).ready(function(){
     $("#canvas").removeLayers().drawLayers();
   });
 
-  $("#save").on("click", saveImage());
+  $("#save").on("click", function() {
+    saveImage();
+  });
 });
 </script>
 </head>
