@@ -34,9 +34,8 @@
           <div class="container-fluid" id="header">
             <div class="row" style="max-width:1135px;">
               <div class="col-xs-5 col-md-6">
-                <a href="#" class="thumbnail" id="iImage">
-                  <img src="images/sample_codi.png">
-                </a>
+                <canvas id="myCanvas" width="700" height="400"
+                        style="border:1px solid #d3d3d3;"></canvas>
               </div>
               <div class="col-xs-5 col-md-6">
                 <div class="contatiner">
@@ -158,10 +157,12 @@
               var col = document.createElement("div");
               col.setAttribute("class", "col-xs-4 col-md-4");
               var a = document.createElement("a");
-              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+              // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[i].image);
+              img.setAttribute("id", actual_JSON[i].productId);
+              img.setAttribute("onClick", "draw(thid.id)");
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
@@ -172,10 +173,12 @@
               var col = document.createElement("div");
               col.setAttribute("class", "col-xs-4 col-md-4");
               var a = document.createElement("a");
-              a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+              // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[i].image);
+              img.setAttribute("id", actual_JSON[i].productId);
+              img.setAttribute("onClick", "draw(thid.id)");
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
@@ -184,10 +187,12 @@
             var col = document.createElement("div");
             col.setAttribute("class", "col-xs-4 col-md-4");
             var a = document.createElement("a");
-            a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+            // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
             a.setAttribute("class", "thumbnail");
             var img = document.createElement("img");
             img.setAttribute("src", actual_JSON[i].image);
+            img.setAttribute("id", actual_JSON[i].productId);
+            img.setAttribute("onClick", "draw(thid.id)");
             a.appendChild(img);
             col.appendChild(a);
             row.appendChild(col);
@@ -207,5 +212,15 @@
     document.forms["search"].submit();
   }
   </script>
+
+<!--Drawing my fashionbook-->
+<script>
+  function draw(img_id) {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.getElementById("img_id");
+    ctx.drawImage(img, 10, 10);
+  }
+</script>
 </body>
 </html>
