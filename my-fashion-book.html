@@ -63,7 +63,7 @@ $(document).ready(function(){
     else if (window.ActiveXObject) {
         ajax = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    ajax.open('POST', 'save_image.php', false);
+    ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.onreadystatechange = function() {
       console.log(ajax.responseText);
