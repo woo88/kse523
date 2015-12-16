@@ -53,7 +53,21 @@ $(document).ready(function(){
   });
 
   $("#save").on("click", function() {
-    saveImage();
+    var canvas = document.getElementById("canvas");
+    var canvasData = canvas.toDataURL("image/png");
+    var xmlHttpReq = false;
+    if (window.XMLHttpRequest) {
+      ajax = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+      ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.onreadystatechange = function() {
+      console.log(ajax.responseText);
+    }
+    alert(canvasData);
+    ajax.send("img="+canvasData);
   });
 });
 </script>
