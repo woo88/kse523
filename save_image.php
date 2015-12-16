@@ -1,11 +1,26 @@
 <?php
-  // requires php5
-  define('UPLOAD_DIR', '/home/woo/dev/kse523/web/html/data/images/');
-  $img = $_POST['imgBase64'];
-  $img = str_replace('data:image/png;base64,', '', $img);
-  $img = str_replace(' ', '+', $img);
-  $data = base64_decode($img);
-  $file = UPLOAD_DIR . uniqid() . '.png';
-  $success = file_put_contents($file, $data);
-  print $success ? $file : 'Unable to save the file.';
+// requires php5
+define('UPLOAD_DIR', '/home/woo/dev/kse523/web/html/data/images/');
+$file = UPLOAD_DIR . uniqid() . '.png';
+
+if (isset($GLOBALS["HTTP_RAW_POST_DATA"]))
+{
+  // Get the data
+  $imageData=$GLOBALS['HTTP_RAW_POST_DATA'];
+ 
+  // Remove the headers (data:,) part.
+  // A real application should use them according to needs such as to check image type
+  $filteredData=substr($imageData, strpos($imageData, ",")+1);
+ 
+  // Need to decode before saving since the data we received is already base64 encoded
+  $unencodedData=base64_decode($filteredData);
+ 
+  //echo "unencodedData".$unencodedData;
+ 
+  // Save file. This example uses a hard coded filename for testing,
+  // but a real application can specify filename in POST variable
+  $fp = fopen( $file, 'wb' );
+  fwrite( $fp, $unencodedData);
+  fclose( $fp );
+}
 ?>
