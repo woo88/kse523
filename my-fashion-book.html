@@ -57,7 +57,7 @@ $(document).ready(function(){
     var dataURL = canvas.toDataURL();
     $.ajax({
       type: "POST",
-      url: "save_image.php",
+      url: "http://143.248.106.54/save_image.php",
       data: { 
          imgBase64: dataURL
       }
