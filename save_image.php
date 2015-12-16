@@ -1,26 +1,12 @@
 <?php
 // requires php5
 define('UPLOAD_DIR', '/home/woo/dev/kse523/web/html/data/images/');
+$file = UPLOAD_DIR . uniqid() . '.png';
 
-if (isset($GLOBALS["HTTP_RAW_POST_DATA"]))
-{
-  $file = UPLOAD_DIR . uniqid() . '.png';
-  // Get the data
-  $imageData=$GLOBALS['HTTP_RAW_POST_DATA'];
- 
-  // Remove the headers (data:,) part.
-  // A real application should use them according to needs such as to check image type
-  $filteredData=substr($imageData, strpos($imageData, ",")+1);
- 
-  // Need to decode before saving since the data we received is already base64 encoded
-  $unencodedData=base64_decode($filteredData);
- 
-  //echo "unencodedData".$unencodedData;
- 
-  // Save file. This example uses a hard coded filename for testing,
-  // but a real application can specify filename in POST variable
-  $fp = fopen( $file, 'wb' );
-  fwrite( $fp, $unencodedData);
-  fclose( $fp );
-}
+$data = substr($_POST['imageData'], strpos($_POST['imageData'], ",") + 1);
+$decodedData = base64_decode($data);
+$fp = fopen($file, 'wb');
+fwrite($fp, $decodedData);
+fclose();
+echo "/canvas.png";
 ?>
