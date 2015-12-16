@@ -52,24 +52,24 @@ $(document).ready(function(){
     $("#canvas").removeLayers().drawLayers();
   });
 
-  $("#save").on("click", function() {
-    var canvas = document.getElementById("canvas");
-    var canvasData = canvas.toDataURL("image/png");
-    var xmlHttpReq = false;       
-    if (window.XMLHttpRequest) {
-        ajax = new XMLHttpRequest();
-    }
+  // $("#save").on("click", function() {
+  //   var canvas = document.getElementById("canvas");
+  //   var canvasData = canvas.toDataURL("image/png");
+  //   var xmlHttpReq = false;       
+  //   if (window.XMLHttpRequest) {
+  //       ajax = new XMLHttpRequest();
+  //   }
 
-    else if (window.ActiveXObject) {
-        ajax = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    ajax.open('POST', 'save_image.php', false);
-    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.onreadystatechange = function() {
-      console.log(ajax.responseText);
-    }
-    ajax.send("img="+canvasData);
-  });
+  //   else if (window.ActiveXObject) {
+  //       ajax = new ActiveXObject("Microsoft.XMLHTTP");
+  //   }
+  //   ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
+  //   ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  //   ajax.onreadystatechange = function() {
+  //     console.log(ajax.responseText);
+  //   }
+  //   ajax.send("img="+canvasData);
+  // });
 });
 </script>
 </head>
@@ -87,7 +87,7 @@ $(document).ready(function(){
               <div class="col-xs-5 col-md-6">
                 <div class="contatiner">
                   <div class="btn-group" id="editBtn">
-                    <button type="button" class="btn btn-success btn-lg" id="save">Save</button>
+                    <button type="button" class="btn btn-success btn-lg" id="save" onclick="saveImage()">Save</button>
                     <button type="button" class="btn btn-warning btn-lg" id="undo">Undo</button>
                     <button type="button" class="btn btn-danger btn-lg" id="reset">Reset</button>
                   </div>
@@ -273,12 +273,13 @@ function saveImage() {
   else if (window.ActiveXObject) {
       ajax = new ActiveXObject("Microsoft.XMLHTTP");
   }
- ajax.open('POST', 'save_image.php', false);
- ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
- ajax.onreadystatechange = function() {
+  ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
+  ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  ajax.onreadystatechange = function() {
       console.log(ajax.responseText);
   }
- ajax.send("img="+canvasData);
+  alert(canvasData);
+  ajax.send("img="+canvasData);
 }
 </script>
 </body>
