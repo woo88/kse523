@@ -278,6 +278,7 @@ function saveImage() {
   ajax.onreadystatechange = function() {
       console.log(ajax.responseText);
   }
+  alert(canvasData);
   ajax.send("img="+canvasData);
 }
 </script>
