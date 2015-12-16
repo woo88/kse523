@@ -51,15 +51,6 @@ $(document).ready(function(){
   $("#reset").on("click", function() {
     $("#canvas").removeLayers().drawLayers();
   });
-
-  // $("#save").on("click", function() {
-  //   var canvas = document.getElementById("canvas");
-  //   var canvasData = canvas.toDataURL("image/png");
-  //   var ajax = new XMLHttpRequest();
-  //   ajax.open("POST",'http://143.248.106.54/save_image.php',false);
-  //   ajax.setRequestHeader('Content-Type', 'application/upload');
-  //   ajax.send(canvasData);
-  // });
 });
 </script>
 </head>
@@ -77,7 +68,7 @@ $(document).ready(function(){
               <div class="col-xs-5 col-md-6">
                 <div class="contatiner">
                   <div class="btn-group" id="editBtn">
-                    <button type="button" class="btn btn-success btn-lg" id="save" onclick="saveImage2()">Save</button>
+                    <button type="button" class="btn btn-success btn-lg" id="save" onclick="saveImage()">Save</button>
                     <button type="button" class="btn btn-warning btn-lg" id="undo">Undo</button>
                     <button type="button" class="btn btn-danger btn-lg" id="reset">Reset</button>
                   </div>
@@ -269,15 +260,6 @@ function saveImage() {
       console.log(ajax.responseText);
   }
  ajax.send("img="+canvasData);
-}
-
-function saveImage2() {
-  var canvas = document.getElementById("canvas");
-  var canvasData = canvas.toDataURL("image/png");
-  var ajax = new XMLHttpRequest();
-  ajax.open("POST",'save_image.php',false);
-  ajax.setRequestHeader('Content-Type', 'application/upload');
-  ajax.send(canvasData);
 }
 </script>
 </body>
