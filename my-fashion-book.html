@@ -25,6 +25,23 @@
 
 <!-- Default CSS -->
 <link rel="stylesheet" type="text/css" href="css/2default.css"/>
+
+<script src="http://calebevans.me/projects/jcanvas/resources/jcanvas/jcanvas.js"></script>
+<script>
+$(document).ready(function(){
+  $("#grid").on("click", ".canvasImg", function(){
+    var src = $(this).attr("src");
+    // alert(src);
+    $("#canvas").drawImage({
+      source: src,
+      x: 200, y: 150,
+      layer: true,
+      draggable: true,
+      width: 170, height:170
+    });
+  });
+});
+</script>
 </head>
 <body>
   <span id="react-root">
@@ -34,7 +51,7 @@
           <div class="container-fluid" id="header">
             <div class="row" style="max-width:1135px;">
               <div>
-                <canvas id="canvas2" width="400" height="400"
+                <canvas id="canvas" width="500" height="500"
                         style="border:1px solid #d3d3d3;"></canvas>
               </div>
               <div class="col-xs-5 col-md-6">
@@ -161,8 +178,9 @@
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[i].image);
-              img.setAttribute("id", actual_JSON[i].productId);
-              img.setAttribute("onClick", "insert(this.id)");
+              img.setAttribute("class", "canvasImg");
+              // img.setAttribute("id", actual_JSON[i].productId);
+              // img.setAttribute("onClick", "insert(this.src)");
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
@@ -177,8 +195,9 @@
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
               img.setAttribute("src", actual_JSON[i].image);
-              img.setAttribute("id", actual_JSON[i].productId);
-              img.setAttribute("onClick", "insert(this.id)");
+              img.setAttribute("class", "canvasImg");
+              // img.setAttribute("id", actual_JSON[i].productId);
+              // img.setAttribute("onClick", "insert(this.src)");
               a.appendChild(img);
               col.appendChild(a);
               row.appendChild(col);
@@ -191,8 +210,9 @@
             a.setAttribute("class", "thumbnail");
             var img = document.createElement("img");
             img.setAttribute("src", actual_JSON[i].image);
-            img.setAttribute("id", actual_JSON[i].productId);
-            img.setAttribute("onClick", "insert(this.id)");
+            img.setAttribute("class", "canvasImg");
+            // img.setAttribute("id", actual_JSON[i].productId);
+            // img.setAttribute("onClick", "insert(this.src)");
             a.appendChild(img);
             col.appendChild(a);
             row.appendChild(col);
@@ -215,15 +235,23 @@
 
 <!--Drawing my fashionbook-->
 <script>
-  function insert(img_id) {
-    var canvas = document.getElementById("canvas2");
+var MAX_HEIGHT = 150;
+function insert(src){
+  var image = new Image();
+  image.onload = function(){
+    var canvas = document.getElementById("canvas");
+    if(image.height > MAX_HEIGHT) {
+      image.width *= MAX_HEIGHT / image.height;
+      image.height = MAX_HEIGHT;
+    }
     var ctx = canvas.getContext("2d");
-    var img = document.getElementById(img_id);
-    ctx.drawImage(img, 10, 10, 150, 150);
-  }
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, 0, 0, image.width, image.height);
+  };
+  image.src = src;
+}
 </script>
-
 <!-- Dragging and resizing image -->
-<script src="js/boxes2.js"></script>
+<!-- <script src="js/boxes2.js"></script> -->
 </body>
 </html>
