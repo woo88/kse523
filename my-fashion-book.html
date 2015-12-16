@@ -192,7 +192,7 @@
             var img = document.createElement("img");
             img.setAttribute("src", actual_JSON[i].image);
             img.setAttribute("id", actual_JSON[i].productId);
-            img.setAttribute("onClick", "draw(thid.id)");
+            img.setAttribute("onClick", "draw(this.id)");
             a.appendChild(img);
             col.appendChild(a);
             row.appendChild(col);
