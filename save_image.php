@@ -1,10 +1,10 @@
 <?php
 // requires php5
 define('UPLOAD_DIR', '/home/woo/dev/kse523/web/html/data/images/');
-$file = UPLOAD_DIR . uniqid() . '.png';
 
 if (isset($GLOBALS["HTTP_RAW_POST_DATA"]))
 {
+  $file = UPLOAD_DIR . uniqid() . '.png';
   // Get the data
   $imageData=$GLOBALS['HTTP_RAW_POST_DATA'];
  

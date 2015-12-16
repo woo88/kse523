@@ -53,12 +53,13 @@ $(document).ready(function(){
   });
 
   $("#save").on("click", function() {
+    alert("hey");
     var canvasData = $("#canvas").getCanvasImage("png", 1);
+    if(canvasData == NULL) alert("null");
     var ajax = new XMLHttpRequest();
     ajax.open("POST",'http://143.248.106.54/save_image.php',false);
     ajax.setRequestHeader('Content-Type', 'application/upload');
     ajax.send(canvasData);
-    alert("hey");
   });
 });
 </script>
