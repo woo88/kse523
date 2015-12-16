@@ -55,20 +55,10 @@ $(document).ready(function(){
   $("#save").on("click", function() {
     var canvas = document.getElementById("canvas");
     var canvasData = canvas.toDataURL("image/png");
-    var xmlHttpReq = false;       
-    if (window.XMLHttpRequest) {
-        ajax = new XMLHttpRequest();
-    }
-
-    else if (window.ActiveXObject) {
-        ajax = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    ajax.open('POST', 'save_image.php', false);
-    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.onreadystatechange = function() {
-      console.log(ajax.responseText);
-    }
-    ajax.send("img="+canvasData);
+    var ajax = new XMLHttpRequest();
+    ajax.open("POST",'http://143.248.106.54/save_image.php',false);
+    ajax.setRequestHeader('Content-Type', 'application/upload');
+    ajax.send(canvasData);
   });
 });
 </script>
