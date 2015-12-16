@@ -1,5 +1,5 @@
 <?php
-define('UPLOAD_DIR', '/home/woo/dev/kse523/web/html/data/images/');
+define('UPLOAD_DIR', 'data/images/');
 $file = UPLOAD_DIR . uniqid() . '.png';
 if (isset($GLOBALS["HTTP_RAW_POST_DATA"]))
 {

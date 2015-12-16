@@ -275,7 +275,7 @@ function saveImage2() {
   var canvas = document.getElementById("canvas");
   var canvasData = canvas.toDataURL("image/png");
   var ajax = new XMLHttpRequest();
-  ajax.open("POST",'http://143.248.106.54/save_image.php',false);
+  ajax.open("POST",'save_image.php',false);
   ajax.setRequestHeader('Content-Type', 'application/upload');
   ajax.send(canvasData);
 }
