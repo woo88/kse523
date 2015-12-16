@@ -53,13 +53,13 @@ $(document).ready(function(){
   });
 
   $("#save").on("click", function() {
-    alert("hey");
-    var data = $("#canvas").getCanvasImage("png", 1);
+    var data = document.getElementById("canvas").toDataURL();
     $.post("http://143.248.106.54/save_image.php", {
       imageData : data
     }, function(data) {
       window.location = data;
     });
+    alert("hey");
   });
 });
 </script>
