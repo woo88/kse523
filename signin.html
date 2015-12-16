@@ -1,146 +1,151 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Signin page | KSE523</title>
+  <meta name="robots" content="noimageindex">
+  <meta id="viewport" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="description" content="SNSs-based Fashion Sharing Service"/>
+  <meta name="author" content="Jongseong Woo, Hyeongseok Lee"/>
+  <meta name="keywords" content="fashion, clothes, shopping, SNSs, share"/>
+  <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
 
-        <meta name="description" content="SNSs-based Fashion Sharing Service" />
-        <meta name="author" content="Jongseong Woo, Hyeongseok Lee" />
-        <meta name="keywords" content="fashion, clothes, shopping, SNSs, share" />
-        <!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-        <title>KSE523 | Login</title>
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-        
-        <!-- Default CSS -->
-        <link rel="stylesheet" type="text/css" href="css/default.css" />
-        
-        <!-- Grid Layout CSS -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-        <!-- Signin CSS -->
-        <link rel="stylesheet" type="text/css" href="css/signin.css" />
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-        <!-- jQuery for Toggle Search JS -->
-        <script src="js/jquery-2.1.4.min.js"></script>
+  <!-- Default CSS -->
+  <link rel="stylesheet" type="text/css" href="css/2default.css"/>
+</head>
+<body>
+  <span id="react-root">
+    <main class="j28" role="main">
+      <article class="i38">
+        <header class="j38"></header>
+        <div class="container-fluid" id="grid">
+          <!-- Log in -->
+          <div class="upper-container">
+            <form class="form-signin">
+              <h3 class="form-signin-heading">Aready have an account?</h3>
+              
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+              
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" value="remember-me"> Remember me
+                </label>
 
-        <!-- Grid Layout JS -->
-    </head>
+                <label>
+                  <p class="login-help"><a href="forget_password  .html">Forgot password?</a></p>
+                </label>
+              </div>
 
-    <body>
-        <div class="container">
-            <!-- Fixed Header -->
-            <header>
-                <div id="jquery-script-menu">
-                    <!-- Login Button -->
-                    <div class="login">
-                        <ul>
-                            <li><a href="signin.html" class="round green">Login<span class="round">Hello</span></a></li>
-                        </ul>
-                    </div>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+              
+              <p class="facebook-login"><a href="fb-signin.html">Sign in with Facebook</a></p>
+            </form>
+          </div>
 
-                    <!-- Main Title -->
-                    <div class="title">
-                        <a href="fashion-book-list.html"><h1>Fashionbook</h1></a>
-                    </div>
-
-                    <!-- Top Navigation -->
-                    <div class="jquery-script-center">
-                        <nav class="codrops-demos">
-                            <a href="fashion-book-list.html">Daily Fashion</a>
-
-                            <!-- Toggle Search -->
-                            <a class="searchlink" id="searchlink">Search
-                                <div class="searchform">
-                                    <form id="search">
-                                        <input type="text" class="s" id="s" placeholder="Keyword Search">
-                                        <button type="submit" class="sbtn"></button>
-                                    </form>
-                                </div>
-                            </a>
-
-                            <a href="my-fashion-book.html">My Fashion Book</a>
-                        </nav>
-                    </div>
-                </div>
-            </header>
+          <!-- Sign up -->
+          <div class="lower-container">
+            <form class="form-signup">
+              <h3 class="form-signup-heading">Sign up</h3>
             
-            <!-- Log in -->
-            <div class="upper-container">
-                <form class="form-signin">
-                    <h3 class="form-signin-heading">Aready have an account?</h3>
-                    
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                    
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                    
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-
-                        <label>
-                            <p class="login-help"><a href="forget_password  .html">Forgot password?</a></p>
-                        </label>
-                    </div>
-
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-                    
-                    <p class="facebook-login"><a href="fb-signin.html">Sign in with Facebook</a></p>
-                </form>
-            </div>
-
-            <!-- Sign up -->
-            <div class="lower-container">
-                <form class="form-signup">
-                    <h3 class="form-signup-heading">Sign up</h3>
-                  
-                    <label for="inputEmail" class="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                
-                    <label for="inputPassword" class="sr-only">Password</label>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                    
-                    <label for="inputPassword_confirm" class="sr-only">Password confirm</label>
-                    
-                    <input type="password" id="inputPassword_confirm" class="form-control" placeholder="Password confirm" required>
-                
-                    <br>
-                    
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                </form>
-            </div>
+              <label for="inputEmail" class="sr-only">Email address</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+              
+              <label for="inputPassword_confirm" class="sr-only">Password confirm</label>
+              
+              <input type="password" id="inputPassword_confirm" class="form-control" placeholder="Password confirm" required>
+          
+              <br>
+              
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+            </form>
+          </div>
         </div>
+        </div>
+      </article>
+    </main>
+    <nav class="h28" role="navigation">
+      <div class="r79" style="max-width:935px;">
+        <a class="s79 u77" href="/index.html"><h1>Fashionbook</h1></a>
+        <div class="t79">
+          <div class="q79 p0a">
+            <!-- Toggle Search -->
+            <a class="searchlink" id="searchlink">Search
+              <div class="searchform">
+                <form id="search" action="search.html">
+                  <input type="text" class="s" id="s" placeholder="Keyword Search" name="q">
+                  <button type="submit" class="sbtn" onclick="submitform()"></button>
+                </form>
+              </div>
+            </a>
+          </div>
+          <a class="n79" href="my-fashion-book.html">
+            <button type="button" class="btn btn-primary">My Fashionbook</button>
+          </a>
+          <a class="n79" href="signin.html">
+            <button type="button" class="btn btn-success">Login</button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <footer class="g28" role="contentinfo">
+      <div class="n09 p09" style="max-width:935px;">
+        <span class="s09">© 2015 Fashionbook</span>
+      </div>
+    </footer>
+  </span>
 
-        <!-- Toggle Search JS -->
-        <script type="text/javascript">
-            $(function() {
-                var $searchlink = $('#searchlink');
+  <!-- Toggle Search JS -->
+  <script type="text/javascript">
+  $(function() {
+    var $searchlink = $('#searchlink');
 
-                /*// hover effect
-                $searchlink.on('mouseover', function(){
-                  $(this).addClass('open');
-                }).on('mouseout', function(){
-                  $(this).removeClass('open');
-                });*/
+    /*// hover effect
+    $searchlink.on('mouseover', function(){
+      $(this).addClass('open');
+    }).on('mouseout', function(){
+      $(this).removeClass('open');
+    });*/
 
-                // on click effect
-                $searchlink.on('click', function(e){
-                    var target = e ? e.target : window.event.srcElement;
-                  
-                    if($(target).attr('id') == 'searchlink') {
-                        if($(this).hasClass('open')) {
-                            $(this).removeClass('open');
-                        } else {
-                            $(this).addClass('open');
-                        }
-                    }
-                });
-            });
-        </script>
-    </body>
+    // on click effect
+    $searchlink.on('click', function(e){
+      var target = e ? e.target : window.event.srcElement;
+    
+      if($(target).attr('id') == 'searchlink') {
+        if($(this).hasClass('open')) {
+          $(this).removeClass('open');
+        } else {
+          $(this).addClass('open');
+        }
+      }
+    });
+  });
+  </script>
+
+  <!-- Search function -->
+  <script type="text/javascript">
+  function submitform() {
+    document.forms["search"].submit();
+  }
+  </script>
+</body>
 </html>
