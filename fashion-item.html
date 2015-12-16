@@ -47,6 +47,7 @@
             </div>
           </div>
         </header>
+        <div class="container-fluid" id="review"></div>
         <div class="container-fluid" id="grid"></div>
       </article>
     </main>
@@ -213,7 +214,49 @@
           var div = document.getElementById("buyBtn");
           div.appendChild(a);
 
+          // Blog review
+          var reviews = actual_JSON[i].reviews;
+          if(reviews.length != 0) {
+            var h2 = document.createElement("h2");
+            h2.appendChild(document.createTextNode("Blog Reviews"));
+            var review = document.getElementById("review");
+            review.appendChild(h2);
+            var r;
+            for(r = 0; r < reviews.length; r++) {
+              // panel div
+              var panel = document.createElement("div");
+              panel.setAttribute("class", "panel panel-warning");
+              // panel heading
+              var a = document.createElement("a");
+              a.setAttribute("href", reviews[r].link);
+              a.setAttribute("target", "_blank");
+              a.appendChild(document.createTextNode(reviews[r].title));
+              var heading = document.createElement("div");
+              heading.setAttribute("class", "panel-heading");
+              heading.appendChild(a);
+              panel.appendChild(heading);
+              // panel body
+              var body = document.createElement("div");
+              body.setAttribute("class", "panel-body");
+              body.appendChild(document.createTextNode(reviews[r].description));
+              panel.appendChild(body);
+              // panel footer
+              var a = document.createElement("a");
+              a.setAttribute("href", reviews[r].bloggerlink);
+              a.setAttribute("target", "_blank");
+              a.appendChild(document.createTextNode(reviews[r].bloggername));
+              var footer = document.createElement("div");
+              footer.setAttribute("class", "panel-footer");
+              footer.appendChild(a);
+              panel.appendChild(footer);
+
+              review.appendChild(panel);
+            }
+          }
+
           query = actual_JSON[i].query;
+
+          break;
         }
       }
 
