@@ -38,7 +38,7 @@ $(document).ready(function(){
       x: 200, y: 150,
       layer: true,
       draggable: true,
-      width: 180, height:180
+      width: 200, height:200
     });
   });
 
@@ -50,6 +50,25 @@ $(document).ready(function(){
 
   $("#reset").on("click", function() {
     $("#canvas").removeLayers().drawLayers();
+  });
+
+  $("#save").on("click", function() {
+    var canvas = document.getElementById("canvas");
+    var canvasData = canvas.toDataURL("image/png");
+    var xmlHttpReq = false;       
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    }
+
+    else if (window.ActiveXObject) {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.open('POST', 'save_image.php', false);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.onreadystatechange = function() {
+      console.log(ajax.responseText);
+    }
+    ajax.send("img="+canvasData);
   });
 });
 </script>
@@ -240,5 +259,27 @@ $(document).ready(function(){
     document.forms["search"].submit();
   }
   </script>
+
+<!-- Save canvas -->
+<script type="text/javascript">
+function saveImage() {
+  var canvas = document.getElementById("canvas");
+  var canvasData = canvas.toDataURL("image/png");
+  var xmlHttpReq = false;       
+  if (window.XMLHttpRequest) {
+      ajax = new XMLHttpRequest();
+  }
+
+  else if (window.ActiveXObject) {
+      ajax = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+ ajax.open('POST', 'save_image.php', false);
+ ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+ ajax.onreadystatechange = function() {
+      console.log(ajax.responseText);
+  }
+ ajax.send("img="+canvasData);
+}
+</script>
 </body>
 </html>
