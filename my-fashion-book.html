@@ -52,7 +52,24 @@ $(document).ready(function(){
     $("#canvas").removeLayers().drawLayers();
   });
 
-  $("#save").on("click", saveImage2());
+  $("#save").on("click", function() {
+    var canvas = document.getElementById("canvas");
+    var canvasData = canvas.toDataURL("image/png");
+    var xmlHttpReq = false;       
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    }
+
+    else if (window.ActiveXObject) {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.onreadystatechange = function() {
+      console.log(ajax.responseText);
+    }
+    ajax.send("img="+canvasData);
+  });
 });
 </script>
 </head>
@@ -256,32 +273,12 @@ function saveImage() {
   else if (window.ActiveXObject) {
       ajax = new ActiveXObject("Microsoft.XMLHTTP");
   }
-  ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
-  ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  ajax.onreadystatechange = function() {
+ ajax.open('POST', 'save_image.php', false);
+ ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+ ajax.onreadystatechange = function() {
       console.log(ajax.responseText);
   }
-  alert(canvasData);
-  ajax.send("img="+canvasData);
-}
-
-function saveImage2() {
-  var canvas = document.getElementById("canvas");
-  var canvasData = canvas.toDataURL("image/png");
-  alert("hey!");
-  $.ajax({
-    type: "POST",
-    url: "http://143.248.106.54/save_image.php",
-    data: { 
-       imgBase64: canvasData
-    }
-  }).done(function(o) {
-    console.log('saved'); 
-    // If you want the file to be visible in the browser 
-    // - please modify the callback in javascript. All you
-    // need is to return the url to the file, you just saved 
-    // and than put the image in your browser.
-  });
+ ajax.send("img="+canvasData);
 }
 </script>
 </body>
