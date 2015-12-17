@@ -33,5 +33,12 @@
   "userId": "000003",
   "items": ["9144523575", "9061352435"],
   "likes": 2
-}
+},
+  {
+    "fashionId": "000006",
+    "image": "data/images/fashionbooks/567258d83eeaa.png",
+    "userId": "000003",
+    "items": ["9071643196", "9021590269"],
+    "likes": 2
+  }
 ]
