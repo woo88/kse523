@@ -72,7 +72,14 @@ $(document).ready(function(){
       }
     }).done(function(o) {
       alert(o);
-      appendObject({"fashionId":uniqid(),"image":o,"items":items});
+
+      var jf = require('jsonfile'); // Requires Reading/Writing JSON   
+      var WEAS_ConfigFile = 'data/fashoinbooks.json';
+      var jsonStr = WEAS_ConfigFile;
+      var obj = JSON.parse(jsonStr);
+      obj.push({"fashionId":uniqid(),"image":o,"items":items});
+      obj = JSON.stringify(obj);
+      jf.writeFileSync(WEAS_ConfigFile, obj); // Writes object to file
       console.log('saved');
       // If you want the file to be visible in the browser 
       // - please modify the callback in javascript. All you
@@ -422,9 +429,9 @@ function saveImage() {
 </script>
 
 <script type="text/javascript">
+  var fs = require('fs');
   function appendObject(obj){
-    var fs = require('fs');
-    alert("hey");
+    alert(fs);
     var configFile = fs.readFileSync('data/fashionbooks.json');
     var config = JSON.parse(configFile);
     config.push(obj);
