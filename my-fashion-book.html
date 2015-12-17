@@ -62,8 +62,7 @@ $(document).ready(function(){
     var dataURL = $("#canvas").getCanvasImage();
     // alert(dataURL);
     $.ajax({
-      // type: "POST",
-      dataType: "jsonp",
+      type: "POST",
       url: "http://143.248.106.54/save_image.php",
       data: { 
          imgBase64: dataURL
