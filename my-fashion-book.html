@@ -80,6 +80,7 @@ $(document).ready(function(){
       fs = require('fs');
       var m = JSON.parse(fs.readFileSync('data/fashionbookss.json').toString());
       m.push(newFasion);
+      alert(JSON.stringify(m));
       fs.writeFile('data/fashionbookss.json', JSON.stringify(m));
 
       console.log('saved');
