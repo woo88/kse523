@@ -72,7 +72,7 @@ $(document).ready(function(){
       }
     }).done(function(o) {
       alert(o);
-      pushJSON(o, items);
+      appendObject({"fashionId":uniqid(),"image":o,"items":items});
       console.log('saved');
       // If you want the file to be visible in the browser 
       // - please modify the callback in javascript. All you
@@ -419,6 +419,18 @@ function saveImage() {
 
   return retId;
 }
+</script>
+
+<script type="text/javascript">
+  function appendObject(obj){
+    var fs = require('fs');
+    var configFile = fs.readFileSync('data/fashionbooks.json');
+    var config = JSON.parse(configFile);
+    config.push(obj);
+    var configJSON = JSON.stringify(config);
+    alert(configJSON);
+    fs.writeFileSync('data/fashionbooks.json', configJSON);
+  }
 </script>
 </body>
 </html>
