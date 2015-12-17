@@ -78,9 +78,9 @@ $(document).ready(function(){
       var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
 
       fs = require('fs');
-      var m = JSON.parse(fs.readFileSync('data/fashionbooks.json').toString());
+      var m = JSON.parse(fs.readFileSync('data/fashionbookss.json').toString());
       m.push(newFasion);
-      fs.writeFile('data/fashionbooks.json', JSON.stringify(m));
+      fs.writeFile('data/fashionbookss.json', JSON.stringify(m));
 
       console.log('saved');
       // If you want the file to be visible in the browser 
