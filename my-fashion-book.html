@@ -77,7 +77,7 @@ $(document).ready(function(){
       request.open("GET", "data/fashoinbooks.json", false);
       request.send(null);
       var my_JSON_object = JSON.parse(request.responseText);
-      alert(my_JSON_object.result[0]);
+      alert(my_JSON_object[0]);
 
       my_JSON_object.push({"fashionId":uniqid(),"image":o,"items":items});
       json = JSON.stringify(my_JSON_object);
