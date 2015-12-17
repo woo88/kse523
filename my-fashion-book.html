@@ -75,25 +75,12 @@ $(document).ready(function(){
     }).done(function(o) {
       alert(o);
 
-      $.getJSON('data/fashionbooks.json', function(data) {
-        // now data is JSON converted to an object / array for you to use.
-        var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
+      var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
 
-        // add a new fashion to the list
-        data.push(newFasion);
-
-        var newData = JSON.stringify(data);
-        jQuery.post('save_fashionbook2.php', {
-          newData: newData
-        }, function(response) {
-          // response could contain the url of the newly saved file
-          alert(response);
-        });
-      });
-      // var xhr = new XMLHttpRequest();
-      // xhr.open('POST','save_fashionbook.php',true);
-      // xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-      // xhr.send('json=' + encoded);
+      fs = require('fs');
+      var m = JSON.parse(fs.readFileSync('data/fashionbooks.json').toString());
+      m.push(newFasion);
+      fs.writeFile('data/fashionbooks.json', JSON.stringify(m));
 
       console.log('saved');
       // If you want the file to be visible in the browser 
