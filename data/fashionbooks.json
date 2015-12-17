@@ -1,7 +1,7 @@
 [
 {
   "fashionId": "000001",
-  "image": "images/fashionbooks/56724eeb38590.png",
+  "image": "data/images/fashionbooks/56724eeb38590.png",
   "userId": "000002",
   "items": ["9118527939", "9065219729", "9096884069"],
   "likes": 88
