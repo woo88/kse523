@@ -73,21 +73,21 @@ $(document).ready(function(){
     }).done(function(o) {
       alert(o);
 
-      var request = new XMLHttpRequest();
-      request.open("GET", "data/fashoinbooks.json", false);
-      request.send(null);
-      var my_JSON_object = JSON.parse(request.responseText);
-      alert(my_JSON_object[0]);
+      $.getJSON('data/fashionbooks.json', function(data) {         
+          alert(data);
+          var my_JSON_object = data;
+          my_JSON_object.push({"fashionId":uniqid(),"image":o,"items":items});
+          json = JSON.stringify(my_JSON_object);
+          alert(json);
+          var encoded = btoa(json);
 
-      my_JSON_object.push({"fashionId":uniqid(),"image":o,"items":items});
-      json = JSON.stringify(my_JSON_object);
-      alert(json);
-      var encoded = btoa(json);
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST','save_fashionbook.php',true);
+          xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+          xhr.send('json=' + encoded);
+          alert("hey");
+      });
 
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST','save_fashionbook.php',true);
-      xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-      xhr.send('json=' + encoded);
 
       console.log('saved');
       // If you want the file to be visible in the browser 
