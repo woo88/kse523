@@ -73,16 +73,9 @@ $(document).ready(function(){
          imgBase64: dataURL
       }
     }).done(function(o) {
-      alert(o);
-
       var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
-
-      fs = require('fs');
-      var m = JSON.parse(fs.readFileSync('data/fashionbookss.json').toString());
-      m.push(newFasion);
-      alert(JSON.stringify(m));
-      fs.writeFile('data/fashionbookss.json', JSON.stringify(m));
-
+      alert(newFasion);
+      
       console.log('saved');
       // If you want the file to be visible in the browser 
       // - please modify the callback in javascript. All you
@@ -324,30 +317,6 @@ function saveImage() {
 </script>
 
 <script type="text/javascript">
-  function pushJSON(imgFile, items) {
-    alert(imgFile);
-    var test;
-    loadJSON(function(response) {
-      // Parse JSON string into object
-      var actual_JSON = JSON.parse(response);
-      actual_JSON.push({"fashionId":uniqid(),"image":imgFile,"items":items});
-
-      var json = JSON.stringify(actual_JSON);
-      test = json;
-      var encoded = btoa(json);
-
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST','save_fashionbook.php',true);
-      xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-      xhr.send('json=' + encoded);
-      alert(json);
-    }, "fashionbooks.json");
-
-    alert(test);
-  }
-</script>
-
-<script type="text/javascript">
   function uniqid(prefix, more_entropy) {
   //  discuss at: http://phpjs.org/functions/uniqid/
   // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
@@ -407,7 +376,7 @@ function saveImage() {
 <script type="text/javascript">
   var fs = require('fs');
   function appendObject(obj){
-    alert(fs);
+    alert(obj);
     var configFile = fs.readFileSync('data/fashionbooks.json');
     var config = JSON.parse(configFile);
     config.push(obj);
