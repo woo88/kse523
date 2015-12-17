@@ -423,12 +423,12 @@ function saveImage() {
 
 <script type="text/javascript">
   function appendObject(obj){
+    alert("hey");
     var fs = require('fs');
     var configFile = fs.readFileSync('data/fashionbooks.json');
     var config = JSON.parse(configFile);
     config.push(obj);
     var configJSON = JSON.stringify(config);
-    alert(configJSON);
     fs.writeFileSync('data/fashionbooks.json', configJSON);
   }
 </script>
