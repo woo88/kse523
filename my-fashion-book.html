@@ -343,12 +343,14 @@ function saveImage() {
 <script type="text/javascript">
   function pushJSON(imgFile, items) {
     alert(imgFile);
+    var test;
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
       actual_JSON.push({"fashionId":uniqid(),"image":imgFile,"items":items});
 
       var json = JSON.stringify(actual_JSON);
+      test = json;
       var encoded = btoa(json);
 
       var xhr = new XMLHttpRequest();
@@ -357,6 +359,8 @@ function saveImage() {
       xhr.send('json=' + encoded);
       alert(json);
     }, "fashionbooks.json");
+
+    alert(test);
   }
 </script>
 
