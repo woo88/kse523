@@ -31,9 +31,14 @@
 <script>
 $(document).ready(function(){
   $("#grid").on("click", ".canvasImg", function(){
+    // var src = $(this).attr("src").split('/');
     var src = $(this).attr("src");
-    // alert(src);
+    // before: http://shopping.phinf.naver.net/main_9074178/9074178114.20151117171702.jpg
+    // after: data/images/items/9074178114.20151117171702.jpg
+
+    // alert(src[src.length-1]);
     $("#canvas").drawImage({
+      // source: "data/images/items/" + src[src.length-1],
       source: src,
       x: 200, y: 150,
       layer: true,
@@ -53,7 +58,8 @@ $(document).ready(function(){
   });
 
   $("#save").on("click", function() {
-    dataURL = $("#canvas").getCanvasImage();
+    var dataURL = $("#canvas").getCanvasImage();
+    // alert(dataURL);
     $.ajax({
       type: "POST",
       url: "http://143.248.106.54/save_image.php",
@@ -61,7 +67,8 @@ $(document).ready(function(){
          imgBase64: dataURL
       }
     }).done(function(o) {
-      console.log('saved'); 
+      alert(o);
+      console.log('saved');
       // If you want the file to be visible in the browser 
       // - please modify the callback in javascript. All you
       // need is to return the url to the file, you just saved 
@@ -202,7 +209,8 @@ $(document).ready(function(){
               // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
-              img.setAttribute("src", actual_JSON[i].image);
+              var src = actual_JSON[i].image.split('/');
+              img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
               img.setAttribute("class", "canvasImg");
               // img.setAttribute("id", actual_JSON[i].productId);
               // img.setAttribute("onClick", "insert(this.src)");
@@ -219,7 +227,9 @@ $(document).ready(function(){
               // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
               a.setAttribute("class", "thumbnail");
               var img = document.createElement("img");
-              img.setAttribute("src", actual_JSON[i].image);
+              // img.setAttribute("src", actual_JSON[i].image);
+              var src = actual_JSON[i].image.split('/');
+              img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
               img.setAttribute("class", "canvasImg");
               // img.setAttribute("id", actual_JSON[i].productId);
               // img.setAttribute("onClick", "insert(this.src)");
@@ -234,7 +244,9 @@ $(document).ready(function(){
             // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
             a.setAttribute("class", "thumbnail");
             var img = document.createElement("img");
-            img.setAttribute("src", actual_JSON[i].image);
+            // img.setAttribute("src", actual_JSON[i].image);
+            var src = actual_JSON[i].image.split('/');
+            img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
             img.setAttribute("class", "canvasImg");
             // img.setAttribute("id", actual_JSON[i].productId);
             // img.setAttribute("onClick", "insert(this.src)");
