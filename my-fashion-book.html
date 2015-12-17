@@ -91,7 +91,7 @@ $(document).ready(function(){
           <div class="container-fluid" id="header">
             <div class="row" style="max-width:1135px;">
               <div>
-                <canvas id="canvas" width="500" height="500"
+                <canvas id="canvas" width="450" height="450"
                         style="border:1px solid #d3d3d3;"></canvas>
               </div>
               <div class="col-xs-5 col-md-6">
@@ -185,64 +185,57 @@ $(document).ready(function(){
   init();
 
   function init() {
-    var query = '니트';
+    // var query = '니트';
     // document.getElementById("test").innerHTML = id;
 
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
 
-      // Grid - Related Items
-      var h2 = document.createElement("h2");
-      h2.appendChild(document.createTextNode("Items related to #" + query));
-      var grid = document.getElementById("grid");
-      grid.appendChild(h2);
-      var row;
-      var i;
-      var n = 0;
-      for(i = 0; i < actual_JSON.length; i++) {
-        if(query == actual_JSON[i].query) {
-          if(n >= 12) break;
+      // 유아인+티셔츠
+      genGrid(actual_JSON, "유아인+티셔츠", 6);
+      // 면바지
+      genGrid(actual_JSON, "면바지", 6);
+      // 지드래곤+신발
+      genGrid(actual_JSON, "지드래곤+신발", 6);
+    });
+  }
 
-          if((n % 3) == 0) {
-            if(n == 0) {
-              row = document.createElement("div");
-              row.setAttribute("class", "row");
-              var col = document.createElement("div");
-              col.setAttribute("class", "col-xs-4 col-md-4");
-              var a = document.createElement("a");
-              // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-              a.setAttribute("class", "thumbnail");
-              var img = document.createElement("img");
-              var src = actual_JSON[i].image.split('/');
-              img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
-              img.setAttribute("class", "canvasImg");
-              // img.setAttribute("id", actual_JSON[i].productId);
-              // img.setAttribute("onClick", "insert(this.src)");
-              a.appendChild(img);
-              col.appendChild(a);
-              row.appendChild(col);
-            } else {
-              grid.appendChild(row);
-              row = document.createElement("div");
-              row.setAttribute("class", "row");
-              var col = document.createElement("div");
-              col.setAttribute("class", "col-xs-4 col-md-4");
-              var a = document.createElement("a");
-              // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
-              a.setAttribute("class", "thumbnail");
-              var img = document.createElement("img");
-              // img.setAttribute("src", actual_JSON[i].image);
-              var src = actual_JSON[i].image.split('/');
-              img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
-              img.setAttribute("class", "canvasImg");
-              // img.setAttribute("id", actual_JSON[i].productId);
-              // img.setAttribute("onClick", "insert(this.src)");
-              a.appendChild(img);
-              col.appendChild(a);
-              row.appendChild(col);
-            }
+  function genGrid(actual_JSON, query, r) {
+    // Grid - Related Items
+    var h2 = document.createElement("h2");
+    h2.appendChild(document.createTextNode("Items related to #" + query));
+    var grid = document.getElementById("grid");
+    grid.appendChild(h2);
+    var row;
+    var i;
+    var n = 0;
+    for(i = 0; i < actual_JSON.length; i++) {
+      if(query == actual_JSON[i].query) {
+        if(n >= r) break;
+
+        if((n % 3) == 0) {
+          if(n == 0) {
+            row = document.createElement("div");
+            row.setAttribute("class", "row");
+            var col = document.createElement("div");
+            col.setAttribute("class", "col-xs-4 col-md-4");
+            var a = document.createElement("a");
+            // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+            a.setAttribute("class", "thumbnail");
+            var img = document.createElement("img");
+            var src = actual_JSON[i].image.split('/');
+            img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
+            img.setAttribute("class", "canvasImg");
+            // img.setAttribute("id", actual_JSON[i].productId);
+            // img.setAttribute("onClick", "insert(this.src)");
+            a.appendChild(img);
+            col.appendChild(a);
+            row.appendChild(col);
           } else {
+            grid.appendChild(row);
+            row = document.createElement("div");
+            row.setAttribute("class", "row");
             var col = document.createElement("div");
             col.setAttribute("class", "col-xs-4 col-md-4");
             var a = document.createElement("a");
@@ -259,12 +252,28 @@ $(document).ready(function(){
             col.appendChild(a);
             row.appendChild(col);
           }
-
-          n++;
+        } else {
+          var col = document.createElement("div");
+          col.setAttribute("class", "col-xs-4 col-md-4");
+          var a = document.createElement("a");
+          // a.setAttribute("href", "fashion-item.html?id=" + actual_JSON[i].productId);
+          a.setAttribute("class", "thumbnail");
+          var img = document.createElement("img");
+          // img.setAttribute("src", actual_JSON[i].image);
+          var src = actual_JSON[i].image.split('/');
+          img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
+          img.setAttribute("class", "canvasImg");
+          // img.setAttribute("id", actual_JSON[i].productId);
+          // img.setAttribute("onClick", "insert(this.src)");
+          a.appendChild(img);
+          col.appendChild(a);
+          row.appendChild(col);
         }
+
+        n++;
       }
-      grid.appendChild(row);
-    });
+    }
+    grid.appendChild(row);
   }
   </script>
 
