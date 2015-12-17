@@ -29,9 +29,9 @@
 },
 {
   "fashionId": "000005",
-  "image": "images/sample_codi.png",
+  "image": "data/images/fashionbooks/567253099e4dc.png",
   "userId": "000003",
-  "items": ["9123532273", "9066555012", "9082613865"],
+  "items": ["9144523575", "9061352435"],
   "likes": 2
 }
 ]
