@@ -74,8 +74,8 @@ $(document).ready(function(){
       }
     }).done(function(o) {
       var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
-      alert(newFasion);
-      
+      alert(JSON.stringify(newFasion));
+
       console.log('saved');
       // If you want the file to be visible in the browser 
       // - please modify the callback in javascript. All you
