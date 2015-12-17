@@ -342,6 +342,7 @@ function saveImage() {
 
 <script type="text/javascript">
   function pushJSON(imgFile, items) {
+    alert(imgFile);
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
