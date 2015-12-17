@@ -63,6 +63,8 @@ $(document).ready(function(){
 
   $("#save").on("click", function() {
     var dataURL = $("#canvas").getCanvasImage();
+    var d;
+    var e;
     // alert(dataURL);
     $.ajax({
       type: "POST",
@@ -73,21 +75,22 @@ $(document).ready(function(){
     }).done(function(o) {
       alert(o);
 
-      $.getJSON('data/fashionbooks.json', function(data) {         
+      $.getJSON('data/fashionbooks.json', function(data) {
+        d = data;     
           alert(data);
           var my_JSON_object = data;
           my_JSON_object.push({"fashionId":uniqid(),"image":o,"items":items});
           json = JSON.stringify(my_JSON_object);
           alert(json);
           var encoded = btoa(json);
+          e = encoded;
 
-          var xhr = new XMLHttpRequest();
-          xhr.open('POST','save_fashionbook.php',true);
-          xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-          xhr.send('json=' + encoded);
-          alert(xhr.responseText);
-          alert("hey");
       });
+      // var xhr = new XMLHttpRequest();
+      // xhr.open('POST','save_fashionbook.php',true);
+      // xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      // xhr.send('json=' + encoded);
+      // alert("hey");
 
 
       console.log('saved');
@@ -97,32 +100,8 @@ $(document).ready(function(){
       // and than put the image in your browser.
     });
 
-    // $.post("http://143.248.106.54/save_image.php", {imgBase64: dataURL}, function (file) {
-    //   var grid = document.getElementById("grid");
-    //   var h2 = document.createElement("h2");
-    //   h2.appendChild(document.createTextNode("test"));
-    //   grid.appendChild(h2);
-    //   alert(file);
-    // });
-
-    // var xmlHttpReq = false;       
-    // if (window.XMLHttpRequest) {
-    //     ajax = new XMLHttpRequest();
-    // }
-
-    // else if (window.ActiveXObject) {
-    //     ajax = new ActiveXObject("Microsoft.XMLHTTP");
-    // }
-    // ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
-    // ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // ajax.onreadystatechange = function() {
-    //   var grid = document.getElementById("grid");
-    //   var h2 = document.createElement("h2");
-    //   h2.appendChild(document.createTextNode("test"));
-    //   grid.appendChild(h2);
-    //   alert(ajax.responseText);
-    // }
-    // ajax.send("imgBase64="+dataURL);
+    alert(d);
+    alert(e);
   });
 });
 </script>
