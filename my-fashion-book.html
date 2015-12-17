@@ -94,7 +94,7 @@ $(document).ready(function(){
     ajax.onreadystatechange = function() {
       var grid = document.getElementById("grid");
       var h2 = document.createElement("h2");
-      h2.appendChild(document.createTextNode(ajax.responseText));
+      h2.appendChild(document.createTextNode("test"));
       grid.appendChild(h2);
       alert(ajax.responseText);
     }
