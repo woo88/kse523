@@ -8,5 +8,5 @@
   $file = UPLOAD_DIR . uniqid() . '.png';
   $success = file_put_contents($file, $data);
   echo $file;
-  print $success ? $file : 'Unable to save the file.';
+  // print $success ? $file : 'Unable to save the file.';
 ?>

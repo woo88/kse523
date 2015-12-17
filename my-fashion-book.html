@@ -77,9 +77,28 @@ $(document).ready(function(){
     // });
     // });
 
-    $.post("http://143.248.106.54/save_image.php", {imgBase64: dataURL}, function (file) {
-        alert(file);
-    });
+    // $.post("http://143.248.106.54/save_image.php", {imgBase64: dataURL}, function (file) {
+    //     alert(file);
+    // });
+
+    var xmlHttpReq = false;       
+    if (window.XMLHttpRequest) {
+        ajax = new XMLHttpRequest();
+    }
+
+    else if (window.ActiveXObject) {
+        ajax = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ajax.open('POST', 'http://143.248.106.54/save_image.php', false);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.onreadystatechange = function() {
+      var grid = document.getElementById("grid");
+      var h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode(ajax.responseText));
+      grid.appendChild(h2);
+      alert(ajax.responseText);
+    }
+    ajax.send("imgBase64="+dataURL);
   });
 });
 </script>
