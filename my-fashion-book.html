@@ -33,6 +33,7 @@ $(document).ready(function(){
   $("#grid").on("click", ".canvasImg", function(){
     // var src = $(this).attr("src").split('/');
     var src = $(this).attr("src");
+    var productId = $(this).attr("id");
     // before: http://shopping.phinf.naver.net/main_9074178/9074178114.20151117171702.jpg
     // after: data/images/items/9074178114.20151117171702.jpg
 
@@ -227,7 +228,7 @@ $(document).ready(function(){
             var src = actual_JSON[i].image.split('/');
             img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
             img.setAttribute("class", "canvasImg");
-            // img.setAttribute("id", actual_JSON[i].productId);
+            img.setAttribute("id", actual_JSON[i].productId);
             // img.setAttribute("onClick", "insert(this.src)");
             a.appendChild(img);
             col.appendChild(a);
@@ -246,7 +247,7 @@ $(document).ready(function(){
             var src = actual_JSON[i].image.split('/');
             img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
             img.setAttribute("class", "canvasImg");
-            // img.setAttribute("id", actual_JSON[i].productId);
+            img.setAttribute("id", actual_JSON[i].productId);
             // img.setAttribute("onClick", "insert(this.src)");
             a.appendChild(img);
             col.appendChild(a);
@@ -263,7 +264,7 @@ $(document).ready(function(){
           var src = actual_JSON[i].image.split('/');
           img.setAttribute("src", "data/images/items/"+ src[src.length-1]);
           img.setAttribute("class", "canvasImg");
-          // img.setAttribute("id", actual_JSON[i].productId);
+          img.setAttribute("id", actual_JSON[i].productId);
           // img.setAttribute("onClick", "insert(this.src)");
           a.appendChild(img);
           col.appendChild(a);
