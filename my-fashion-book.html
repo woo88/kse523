@@ -343,22 +343,20 @@ function saveImage() {
 <script type="text/javascript">
   function pushJSON(imgFile, items) {
     alert(imgFile);
-    var json;
     loadJSON(function(response) {
       // Parse JSON string into object
       var actual_JSON = JSON.parse(response);
       actual_JSON.push({"fashionId":uniqid(),"image":imgFile,"items":items});
 
-      json = JSON.stringify(actual_JSON);
+      var json = JSON.stringify(actual_JSON);
+      var encoded = btoa(json);
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST','save_fashionbook.php',true);
+      xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+      xhr.send('json=' + encoded);
+      alert(json);
     }, "fashionbooks.json");
-
-    var encoded = btoa(json);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST','save_fashionbook.php',true);
-    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-    xhr.send('json=' + encoded);
-    alert(json);
   }
 </script>
 
