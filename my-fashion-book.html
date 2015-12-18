@@ -70,11 +70,12 @@ $(document).ready(function(){
       type: "POST",
       url: "save_image.php",
       data: { 
-         imgBase64: dataURL
+         imgBase64: dataURL,
+         items: items
       }
     }).done(function(o) {
-      var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
-      alert(JSON.stringify(newFasion));
+      // var newFasion = {"fashionId":uniqid(),"image":o,"items":items};
+      alert(o);
 
       console.log('saved');
       // If you want the file to be visible in the browser 
