@@ -8,7 +8,7 @@
   $data = base64_decode($img);
   $file = UPLOAD_DIR . uniqid() . '.png';
   $success = file_put_contents($file, $data);
-  // echo $file;
+  echo $file;
   // print $success ? $file : 'Unable to save the file.';
 
   $data = {"fashionId":uniqid(),"image":$file,"items":$items,"likes":0,"userId":"000001"};
@@ -18,5 +18,5 @@
   $jsonData = json_encode($tempArr);
   file_put_contents('data/fashionbooks.json', $jsonData);
 
-  echo $tempArr;
+  // echo $tempArr;
 ?>
