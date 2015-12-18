@@ -11,10 +11,10 @@
   echo $file;
   // print $success ? $file : 'Unable to save the file.';
 
-  $data = {"fashionId":uniqid(),"image":$file,"items":$items,"likes":0,"userId":"000001"};
+  $result = {"fashionId":uniqid(),"image":$file,"items":$items,"likes":0,"userId":"000001"};
   $inp = file_get_contents('data/fashionbooks.json');
   $tempArr = json_encode($inp);
-  array_push($tempArr, $data);
+  array_push($tempArr, $result);
   $jsonData = json_encode($tempArr);
   file_put_contents('data/fashionbooks.json', $jsonData);
 
