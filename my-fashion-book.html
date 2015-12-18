@@ -59,6 +59,7 @@ $(document).ready(function(){
 
   $("#reset").on("click", function() {
     $("#canvas").removeLayers().drawLayers();
+    items = [];
   });
 
   $("#save").on("click", function() {
@@ -80,7 +81,8 @@ $(document).ready(function(){
       // need is to return the url to the file, you just saved 
       // and than put the image in your browser.
 
-      $("#canvas").clearCanvas();
+      // $("#canvas").clearCanvas();
+      $("#canvas").removeLayers().drawLayers();
       items = [];
     });
   });
