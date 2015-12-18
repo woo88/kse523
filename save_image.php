@@ -11,12 +11,12 @@
   // echo $file;
   // print $success ? $file : 'Unable to save the file.';
 
-  $result = {"fashionId":uniqid(),"image":$file,"items":$items,"likes":0,"userId":"000001"};
-  // $inp = file_get_contents('data/fashionbooks.json');
-  // $tempArr = json_encode($inp);
-  // array_push($tempArr, $result);
-  // $jsonData = json_encode($tempArr);
-  // file_put_contents('data/fashionbooks.json', $jsonData);
+  $result = array('fashionId'=>uniqid(),'image'=>$file,'items'=>$items,'likes'=>0,'userId'=>'000001');
+  $inp = file_get_contents('data/fashionbooks.json');
+  $tempArr = json_encode($inp);
+  array_push($tempArr, $result);
+  $jsonData = json_encode($tempArr);
+  file_put_contents('data/fashionbooks.json', $jsonData);
 
   // echo $tempArr;
   echo 'php done';
